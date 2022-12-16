@@ -4,3 +4,16 @@
   position: fixed;
   left: 10em;
 }
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-icon {
+  display: flex;
+  justify-content: flex-start;
+  left: 1em;
+  position: fixed;
+}

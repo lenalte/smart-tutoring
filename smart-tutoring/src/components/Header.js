@@ -12,8 +12,8 @@ import Logo from '../img/Logo.png';
 export default function Header() {
     return (
         <Toolbar>
-            <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }} position='fixed'>
-                <MenuIcon />
+            <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+                <MenuIcon className="menu-icon"/>
             </IconButton>
             <Box
                 component = "img"

@@ -4,6 +4,8 @@ import TextField from '@mui/material/TextField';
 import Checkbox from '@mui/material/Checkbox';
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
+import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
 
 
 const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
@@ -11,6 +13,7 @@ const checkedIcon = <CheckBoxIcon fontSize="small" />;
 
 export default function Languages() {
   return (
+    <Grid>
     <Autocomplete
       multiple
       id="checkboxes-tags-demo"
@@ -33,6 +36,24 @@ export default function Languages() {
         <TextField {...params} label="Sprache auswählen" placeholder="Sprachen" />
       )}
     />
+    <Button variant="contained"
+        sx={{borderRadius: 50}}
+        className='button'
+        style={{
+            position: 'fixed',
+            width: '9em',
+            justifyContent: 'center',
+            left: '7em',
+            bottom: '4em',
+            color: 'white', 
+            fontFamily: 'Judson',
+            fontSize: '17px', 
+            textTransform: 'none',
+            padding: '8px 65px 8px 65px',
+            backgroundColor: 'black',
+            }}>
+    next</Button>
+    </Grid>
   );
 }
 

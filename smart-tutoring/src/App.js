@@ -3,17 +3,14 @@ import Languages from './components/Languages';
 import Typography from '@mui/material/Typography';
 import Header from './components/Header';
 import ProgressLine from './components/ProgressLine';
-import NextButton from './components/Button';
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import { } from '@mui/icons-material';
-// import TitleBar from './components/TitleBar'
 
 function App() {
   return (
     <div className="App">
-      {/* <TitleBar /> */}
       <Header />
       <Container>
           <ProgressLine />
@@ -28,16 +25,6 @@ function App() {
               alignItems: "center"
             }}>
               <Languages />
-          </Box>
-      </Container>
-      <Container>
-          <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-          }}
-            >
-          <NextButton />
           </Box>
       </Container>
     </div>
