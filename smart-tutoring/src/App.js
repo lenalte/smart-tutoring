@@ -34,8 +34,9 @@ function App() {
           <Box
           sx={{
             display: "flex",
-            alignItems: "center"
-          }}>
+            justifyContent: "center",
+          }}
+            >
           <NextButton />
           </Box>
       </Container>

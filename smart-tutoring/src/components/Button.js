@@ -7,7 +7,18 @@ export default function NextButton() {
     return (
         <Button variant="contained"
         sx={{borderRadius: 50}}
-        style={{color: 'white', fontFamily: 'Judson', textTransform: 'none'}}>
+        style={{
+            position: 'fixed',
+            width: '9em',
+            justifyContent: 'center',
+            bottom: '4em',
+            color: 'white', 
+            fontFamily: 'Judson',
+            fontSize: '17px', 
+            textTransform: 'none',
+            padding: '8px 65px 8px 65px',
+            backgroundColor: 'black',
+            }}>
         next</Button>
     )
 }
