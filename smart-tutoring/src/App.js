@@ -1,33 +1,19 @@
 import './App.css';
-import Languages from './components/Languages';
-import Typography from '@mui/material/Typography';
-import Header from './components/Header';
-import ProgressLine from './components/ProgressLine';
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
 import { } from '@mui/icons-material';
+import Home from './pages/Home';
+import LanguagesB from './pages/Languages_become';
+import Header from './components/Header';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Container>
-          <ProgressLine />
-      </Container>
-      <Container>
-          <Typography fontFamily={"Judson"} variant="h4" component="h2" lineHeight={1.2} paddingBottom={8}>
-            Welche Sprachen <br></br> sprichst du?
-          </Typography>
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "center"
-            }}>
-              <Languages />
-          </Box>
-      </Container>
-    </div>
+  <BrowserRouter>
+  <Header />
+  <Routes>
+    <Route path='/' element={<Home />}/>
+    <Route path='languages_become' element={<LanguagesB />}/>
+  </Routes>
+  </BrowserRouter>
   );
 }
 
