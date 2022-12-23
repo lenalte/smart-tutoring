@@ -5,7 +5,7 @@ import Stack from '@mui/material/Stack';
 
 export default function RedButtons () {
     return (
-        <Stack spacing={7}>
+        <Stack spacing={7} paddingTop={20}>
                 <Button variant="contained"
             sx={{borderRadius: 50}}
             className='button'

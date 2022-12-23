@@ -6,13 +6,15 @@ import Box from '@mui/material/Box';
 // import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import Logo from '../img/Logo.png';
+import LogoWhite from '../img/LogoWhite.png';
 // import { CenterFocusStrong } from '@mui/icons-material';
 
-export default function Header() {
+export default function HeaderBlack() {
     return (
         <Toolbar>
-            <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+            <IconButton edge="start" color="inheritet" aria-label="menu" sx={{ mr: 2 }} style={{
+                color: 'white'
+            }}>
                 <MenuIcon className="menu-icon"/>
             </IconButton>
             <Box
@@ -21,30 +23,10 @@ export default function Header() {
                 height: 25,
                 }}
                 alt="smart tutoring"
-                src={Logo}
+                src={LogoWhite}
                 className="logo"
 
             />
         </Toolbar>
     )
 }
-
-
-
-
-// export default function Header() {
-//     return (
-//       <Box sx={{ flexGrow: 1 }}>
-//         <AppBar position="static">
-//           <Toolbar variant="dense">
-//             <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-//               <MenuIcon />
-//             </IconButton>
-//             <Typography variant="h6" color="inherit" component="div">
-//               Photos
-//             </Typography>
-//           </Toolbar>
-//         </AppBar>
-//       </Box>
-//     );
-//   }
