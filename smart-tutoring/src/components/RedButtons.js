@@ -10,7 +10,7 @@ export default function RedButtons () {
             sx={{borderRadius: 50}}
             className='button'
             style={{
-                position: 'fixed',
+                position: 'absolute',
                 // width: '9em',
                 justifyContent: 'center',
                 // left: '7em',
@@ -28,7 +28,7 @@ export default function RedButtons () {
             sx={{borderRadius: 50}}
             className='button'
             style={{
-                position: 'fixed',
+                position: 'absolute',
                 // width: '9em',
                 justifyContent: 'center',
                 // left: '7em',
