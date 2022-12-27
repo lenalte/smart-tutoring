@@ -18,7 +18,9 @@ const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
 export default function ProgressLine() {
     return (
       <Box sx={{ flexGrow: 1 }} paddingBottom={4} paddingTop={5}>
-        <BorderLinearProgress variant="determinate" value={71} />
+        <BorderLinearProgress variant="determinate" 
+        value={71} 
+        />
       </Box>
     );
   }

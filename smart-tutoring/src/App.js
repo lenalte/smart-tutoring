@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import LanguagesB from './pages/Languages_become';
 // import HeaderBlack from './components/HeaderBlack';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import SchoolB from './pages/School_become';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
   {/* <HeaderBlack /> */}
   <Routes>
     <Route path='/' element={<Home />}/>
+    <Route path='schoolBecome' element={<SchoolB />}/>
     <Route path='languagesBecome' element={<LanguagesB />}/>
   </Routes>
   </BrowserRouter>
