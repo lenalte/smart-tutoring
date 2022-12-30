@@ -3,44 +3,44 @@ import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 // import Box from '@mui/material/Box';
 
-export default function RedButtons () {
+export default function RedButtons() {
     return (
         <Stack spacing={7} paddingTop={20}>
-                <Button variant="contained"
-            sx={{borderRadius: 50}}
-            className='button'
-            style={{
-                position: 'absolute',
-                // width: '9em',
-                justifyContent: 'center',
-                // left: '7em',
-                // bottom: '4em',
-                color: 'white', 
-                fontFamily: 'Judson',
-                fontSize: '17px', 
-                textTransform: 'none',
-                padding: '8px 50px 8px 50px',
-                backgroundColor: '#FF453C',
+            <Button variant="contained"
+                sx={{ borderRadius: 50 }}
+                className='button'
+                style={{
+                    position: 'absolute',
+                    // width: '9em',
+                    justifyContent: 'center',
+                    // left: '7em',
+                    // bottom: '4em',
+                    color: 'white',
+                    fontFamily: 'Judson',
+                    fontSize: '17px',
+                    textTransform: 'none',
+                    padding: '8px 50px 8px 50px',
+                    backgroundColor: '#FF453C',
                 }}>
-            finde tutor</Button>
+                finde tutor</Button>
 
             <Button variant="contained"
-            sx={{borderRadius: 50}}
-            className='button'
-            style={{
-                position: 'absolute',
-                // width: '9em',
-                justifyContent: 'center',
-                // left: '7em',
-                // bottom: '4em',
-                color: 'white',
-                fontFamily: 'Judson',
-                fontSize: '17px',
-                textTransform: 'none',
-                padding: '8px 45px 8px 45px',
-                backgroundColor: '#FF453C',
-            }}>
-            werde tutor</Button>
-    </Stack>
+                sx={{ borderRadius: 50 }}
+                className='button'
+                style={{
+                    position: 'absolute',
+                    // width: '9em',
+                    justifyContent: 'center',
+                    // left: '7em',
+                    // bottom: '4em',
+                    color: 'white',
+                    fontFamily: 'Judson',
+                    fontSize: '17px',
+                    textTransform: 'none',
+                    padding: '8px 45px 8px 45px',
+                    backgroundColor: '#FF453C',
+                }}>
+                werde tutor</Button>
+        </Stack>
     )
 }

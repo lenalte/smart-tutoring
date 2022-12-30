@@ -18,23 +18,23 @@ import LogoWhite from '../img/LogoWhite.png';
 export default function HeaderBlack() {
     return (
         // <AppBar posittion="fixed">
-            <Toolbar posittion="fixed">
-                <IconButton edge="start" color="inheritet" aria-label="menu" sx={{ mr: 2 }} style={{
-                    color: 'white'
-                }}>
-                    <MenuIcon className="menu-icon"/>
-                </IconButton>
-                <Box
-                    component = "img"
-                    sx = {{
+        <Toolbar posittion="fixed">
+            <IconButton edge="start" color="inheritet" aria-label="menu" sx={{ mr: 2 }} style={{
+                color: 'white'
+            }}>
+                <MenuIcon className="menu-icon" />
+            </IconButton>
+            <Box
+                component="img"
+                sx={{
                     height: 25,
-                    }}
-                    alt="smart tutoring"
-                    src={LogoWhite}
-                    className="logo"
+                }}
+                alt="smart tutoring"
+                src={LogoWhite}
+                className="logo"
 
-                />
-            </Toolbar>
+            />
+        </Toolbar>
         // </AppBar>
     )
 }

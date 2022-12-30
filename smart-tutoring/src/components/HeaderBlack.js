@@ -13,12 +13,12 @@ export default function HeaderBlack() {
     return (
         <Toolbar>
             <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-                <MenuIcon className="menu-icon"/>
+                <MenuIcon className="menu-icon" />
             </IconButton>
             <Box
-                component = "img"
-                sx = {{
-                height: 25,
+                component="img"
+                sx={{
+                    height: 25,
                 }}
                 alt="smart tutoring"
                 src={Logo}

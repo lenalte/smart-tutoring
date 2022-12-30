@@ -15,11 +15,12 @@ const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
   },
 }));
 
-export default function ProgressLine() {
+export default function ProgressLine({current, steps}) {
+    console.log("progressValue", (current / steps) * 100);
     return (
       <Box sx={{ flexGrow: 1 }} paddingBottom={4} paddingTop={5}>
         <BorderLinearProgress variant="determinate" 
-        value={71} 
+        value={(current / steps) * 100} 
         />
       </Box>
     );
