@@ -10,7 +10,7 @@ import Grid from '@mui/material/Grid';
 const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
 const checkedIcon = <CheckBoxIcon fontSize="small" />;
 
-export default function Languages() {
+export default function LanguagesFinder() {
   return (
     <Grid>
       <Autocomplete
