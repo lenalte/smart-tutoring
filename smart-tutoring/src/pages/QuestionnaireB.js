@@ -10,12 +10,17 @@ import Bio from '../components/Bio';
 import Subjects from '../components/Subjects';
 import Age from '../components/Age';
 import Hours from '../components/Hours';
+// import PickerDemo from '../components/Picker';
 
 const steps = [
     {
         title: <>Wie alt bist du?</>,
         content: <Age />
     },
+    // {
+    //     title: <>Wie alt bist du?</>,
+    //     content: <PickerDemo />
+    // },
     {
         title: <>Auf welchen Schulen <br /> warst/bist du?</>,
         content: <Schools />

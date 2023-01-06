@@ -3,13 +3,13 @@ import Skills from '../components/Skills';
 import { } from '@mui/icons-material';
 import HeaderBlack from '../components/HeaderBlack';
 import ProgressView from '../components/genericComponents/ProgressView';
-import Schools from '../components/Schools';
 import Location from '../components/Location';
 import Languages from '../components/Languages';
 import Bio from '../components/Bio';
 import Subjects from '../components/Subjects';
 import Age from '../components/Age';
 import Hours from '../components/Hours';
+import SelectSchoolsFinder from '../components/SchoolsFinder';
 
 const steps = [
     {
@@ -18,10 +18,11 @@ const steps = [
     },
     {
         title: <>Auf welche Schule geht Dein Kind <br />  aktuell/möchtes es gehen?</>,
-        content: <Schools />
+        content: <SelectSchoolsFinder />
+        // Extra Component für Schools (zum Beispiel SchoolsFind.js) muss erstellt werden, da der Teil sich unterscheidet
     },
     {
-        title: <>Wo wohnst ihr aktuell?</>,
+        title: <>Wo wohnt ihr aktuell?</>,
         content: <Location />
     },
     {
@@ -56,4 +57,4 @@ const QuestionnaireFinder = () => {
     </div>
 }
 
-export default QuestionnaireB;
+export default QuestionnaireFinder;

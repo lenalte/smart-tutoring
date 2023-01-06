@@ -1,54 +1,52 @@
 import * as React from 'react';
+import { useState } from 'react';
 import Chip from '@mui/material/Chip';
 // import Stack from '@mui/material/Stack';
 import Grid from '@mui/material/Unstable_Grid2';
 
+const subjects = [
+    "Mathe",
+    "Deutsch",
+    "Englisch",
+    "HSU",
+    "Erdkunde",
+    "Biologie",
+    "Geschichte",
+    "Chemie",
+    "Physik",
+    "Latein",
+    "Französisch",
+    "Religion",
+    "Spanisch",
+]
+
 export default function Subjects() {
-    const handleClick = () => {
-        console.info('You clicked the Chip.');
+
+    // const theme = ({
+    //     clickedColor: {
+    //         backgroundColor: "black",
+    //         label: "white",
+    //     },
+    //     unclicked: {
+    //         backgroundColor: "white",
+    //     }
+    // })
+
+    // const [changeColor, setChangeColor] = useState(false)
+
+    const [selectedItems, setSelectedItems] = useState([])
+
+    const handleClick = (subject) => {
+        setSelectedItems()
     };
+
+
 
     return (
         <Grid container spacing={1}>
-            <Grid xs={2.5}>
-                <Chip label="Mathe" variant="outlined" onClick={handleClick} />
-            </Grid>
-            <Grid xs={2.8}>
-                <Chip label="Deutsch" variant="outlined" onClick={handleClick} />
-            </Grid>
-            <Grid xs={2.7}>
-                <Chip label="Enlisch" variant="outlined" onClick={handleClick} />
-            </Grid>
-            <Grid xs={2.7}>
-                <Chip label="HSU" variant="outlined" onClick={handleClick} />
-            </Grid>
-            <Grid xs={3}>
-                <Chip label="Erdkunde" variant="outlined" onClick={handleClick} />
-            </Grid>
-            <Grid xs={2.8}>
-                <Chip label="Biologie" variant="outlined" onClick={handleClick} />
-            </Grid>
-            <Grid xs={3.4}>
-                <Chip label="Geschichte" variant="outlined" onClick={handleClick} />
-            </Grid>
-            <Grid xs={2.7}>
-                <Chip label="Chemie" variant="outlined" onClick={handleClick} />
-            </Grid>
-            <Grid xs={2.6}>
-                <Chip label="Physik" variant="outlined" onClick={handleClick} />
-            </Grid>
-            <Grid xs={2.5}>
-                <Chip label="Latein" variant="outlined" onClick={handleClick} />
-            </Grid>
-            <Grid xs={3.6}>
-                <Chip label="Französisch" variant="outlined" onClick={handleClick} />
-            </Grid>
-            <Grid xs={2.9}>
-                <Chip label="Religion" variant="outlined" onClick={handleClick} />
-            </Grid>
-            <Grid xs={3}>
-                <Chip label="Spanisch" variant="outlined" onClick={handleClick} />
-            </Grid>
-        </Grid>
+            {subjects.map(subject => <Grid xs="auto">
+                <Chip label={subject} variant={selectedItems.includes(subject) ? "filled" : "outlined"} onClick={() => handleClick(subject)} />
+            </Grid>)}
+        </Grid >
     );
 }
