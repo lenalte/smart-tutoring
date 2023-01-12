@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import QuestionnaireB from './pages/QuestionnaireB';
 import QuestionnaireFinder from './pages/QuestionnaireFinder';
+import MatchesB from './pages/MatchesB';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='questionnaireBecome' element={<QuestionnaireB />} />
         <Route path='questionnaireFind' element={<QuestionnaireFinder />} />
+        <Route path='matchesBecome' element={<MatchesB />} />
       </Routes>
     </BrowserRouter>
   );
