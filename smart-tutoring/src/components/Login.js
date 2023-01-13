@@ -1,5 +1,3 @@
-import { useRadioGroup } from "@mui/material";
-
 const app = express ();
 
 app.use(express.json({limit: "50mb" }));
@@ -27,14 +25,14 @@ app.post("/register", async (req, res)=> {
             role: "default"
         });
 
-        var privateKey = fs.readFileSync ('Keys/privat.key');
+        /*var privateKey = fs.readFileSync ('Keys/privat.key');
         const token = jwt.sign(
             {user_id: user._id, email, role:["RETRIEVE_ALL_BOOKINGS", "CONFIRM_BOOKING"],},
             privateKey, {algorithm: 'RS256'},
             {
                 expiresIn: "2h",
             }
-        );
+        );*/
 
         user.token = token;
 
@@ -43,4 +41,6 @@ app.post("/register", async (req, res)=> {
         console.log(err);
     }
 });
+
+
 
