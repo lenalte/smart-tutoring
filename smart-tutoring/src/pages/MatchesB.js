@@ -12,7 +12,10 @@ const MatchesB = () => {
             <Typography fontFamily={"Judson"} sx={{ fontSize: 27 }} variant="body1" lineHeight={1.2} paddingBottom={4} paddingTop={6} paddingLeft={8} color="black">
                 Du hast 10 Matches
             </Typography>
-            <Matches />
+            <Stack spacing={1.5}>
+                <Matches />
+                <Matches />
+            </Stack>
         </Stack>
     </div>
 }
