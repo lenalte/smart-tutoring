@@ -38,7 +38,6 @@ export default function SelectSchools() {
             label="Schreibe hier etwas über dich..."
             multiline
             rows={8}
-          //   defaultValue="Default Value"
           />
         </ThemeProvider>
       </Box>
