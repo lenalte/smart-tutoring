@@ -1,9 +1,9 @@
 import LoginS from '../components/LoginS'
 
-const Login = ()=>{ 
+const Login = () => {
     return (
-    <LoginS/>
-    ) 
+        <LoginS />
+    )
 
 }
 
