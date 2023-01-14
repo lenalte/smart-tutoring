@@ -20,7 +20,7 @@ function App() {
         <Route path='matchesBecome' element={<MatchesB />} />
         <Route path='profileBecome' element={<ProfileB />} />
         <Route path='login' element={<LoginPage />} />
-        <Route path='*' element={<Home />} />
+        {/* <Route path='*' element={<Home />} /> */}
       </Routes>
     </BrowserRouter>
   );

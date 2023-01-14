@@ -63,6 +63,8 @@ const card3 = (
 
 
 export default function Profile() {
+
+
     return (
         <Stack paddingTop={6} paddingLeft={2}>
             <Grid container spacing={2}>
@@ -74,7 +76,9 @@ export default function Profile() {
                         <Typography fontFamily={"Judson"} sx={{ fontSize: 20 }} variant="body1" lineHeight={1.2} color="black">
                             Vorname Nachname, Alter
                         </Typography>
-                        <Rating name="read-only" value={5} readOnly size="small" style={{ paddingTop: 8 }} />
+
+                        <Rating name="read-only" value={3} readOnly size="small" style={{ paddingTop: 8, color: '#ff453c' }} />
+
                     </Box>
                 </Grid>
             </Grid>

@@ -10,7 +10,6 @@ import LinearProgress, { linearProgressClasses } from '@mui/material/LinearProgr
 import { styled } from '@mui/material/styles';
 import Chip from '@mui/material/Chip';
 import Grid from '@mui/material/Unstable_Grid2';
-import { useState } from 'react';
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
     height: 9,
@@ -31,12 +30,7 @@ const subjects = [
 ]
 
 export default function Matches() {
-    const [selectedItems, setSelectedItems] = useState([])
 
-    const handleClick = (subject) => {
-        setSelectedItems()
-    };
-    // const [value, setValue] = React.useState(2);
     return (
         <Stack style={{ paddingLeft: 10, paddingRight: 10 }}>
             <Card sx={{ minWidth: 250 }} style={{ backgroundColor: "#e5e5e5" }}>
@@ -46,7 +40,7 @@ export default function Matches() {
                         <Grid xs={3}>
                             <Box>
                                 <Avatar src="/broken-image.jpg" sx={{ width: 56, height: 56 }} />
-                                <Rating name="read-only" value={3} readOnly size="small" style={{ paddingTop: 8 }} />
+                                <Rating name="read-only" value={3} readOnly size="small" style={{ paddingTop: 8, color: '#ff453c' }} />
                             </Box>
                         </Grid>
                         <Grid xs={6}>
@@ -61,7 +55,7 @@ export default function Matches() {
                     {/* </Stack> */}
                     <Grid container spacing={1} style={{ paddingTop: 9 }}>
                         {subjects.map(subject => <Grid xs="auto">
-                            <Chip label={subject} variant={selectedItems.includes(subject) ? "filled" : "outlined"} onClick={() => handleClick(subject)} />
+                            <Chip label={subject} variant={'outlined'} />
                         </Grid>)}
                     </Grid >
 
