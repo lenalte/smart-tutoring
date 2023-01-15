@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
 import Button from "@mui/material/Button";
+import Typography from '@mui/material/Typography';
 
 export default function login() {
     return (
@@ -20,7 +21,9 @@ export default function login() {
                 lineHeight: '37px',
                 color: '#000000'
             }}>
-                <p>sign in für smart tutoring</p>
+                <Typography fontFamily={"Judson"} sx={{ fontSize: 27 }} variant="body1" lineHeight={1.2} paddingBottom={4} paddingTop={6} paddingLeft={1} color="black">
+                    sign in für smart tutoring
+                </Typography>
             </div>
 
             <div style={{
@@ -40,12 +43,12 @@ export default function login() {
                 />
             </div>
             <div style={{
-                    position: 'absolute',
-                    width: '315px',
-                    height: '50px',
-                    left: '34px',
-                    top: '318px',
-                }}>
+                position: 'absolute',
+                width: '315px',
+                height: '50px',
+                left: '34px',
+                top: '318px',
+            }}>
                 <TextField
                     sx={{
                         minWidth: '350',

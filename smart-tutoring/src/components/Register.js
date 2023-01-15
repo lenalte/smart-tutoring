@@ -6,6 +6,7 @@ import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import Button from "@mui/material/Button";
+import Typography from '@mui/material/Typography';
 
 export default function login() {
     return (
@@ -23,7 +24,9 @@ export default function login() {
                 lineHeight: '37px',
                 color: '#000000'
             }}>
-                <p>sign up für smart tutoring</p>
+                <Typography fontFamily={"Judson"} sx={{ fontSize: 27 }} variant="body1" lineHeight={1.2} paddingBottom={4} paddingTop={6} paddingLeft={1} color="black">
+                    sign up für smart tutoring
+                </Typography>
             </div>
 
             <Button style={{
