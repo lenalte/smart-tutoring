@@ -51,22 +51,22 @@ export default function login() {
                 autoComplete="off"
             ></Box>
             <div style={{
-    position: 'absolute',
-    width: '78px',
-    height: '18px',
-    left: '153px',
-    top: '293px',
-    fontFamily: 'Roboto',
-    fontStyle: 'normal',
-    fontWeight: 400,
-    fontSize: '13px',
-    lineHeight: '15px',
-    textAlign: 'center',
-    color: '#000000'
-}}>
-    <p>oder</p>
-</div>
-            
+                position: 'absolute',
+                width: '78px',
+                height: '18px',
+                left: '153px',
+                top: '293px',
+                fontFamily: 'Roboto',
+                fontStyle: 'normal',
+                fontWeight: 400,
+                fontSize: '13px',
+                lineHeight: '15px',
+                textAlign: 'center',
+                color: '#000000'
+            }}>
+                <p>oder</p>
+            </div>
+
             <Grid>
                 <div style={{
                     position: 'absolute',
@@ -199,7 +199,7 @@ export default function login() {
                         textTransform: 'none',
                         padding: '8px 65px 8px 65px',
                         backgroundColor: 'white',
-                         whiteSpace: 'nowrap',
+                        whiteSpace: 'nowrap',
                         borderRadius: 50
                     }}>
                     <p>sign in</p></Button>
