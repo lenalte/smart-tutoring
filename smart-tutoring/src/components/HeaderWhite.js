@@ -19,6 +19,14 @@ import ListItemText from '@mui/material/ListItemText';
 import List from '@mui/material/List';
 
 
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
+import LanguageOutlinedIcon from '@mui/icons-material/LanguageOutlined';
+import ContactSupportOutlinedIcon from '@mui/icons-material/ContactSupportOutlined';
+import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
+import GradeOutlinedIcon from '@mui/icons-material/GradeOutlined';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+
 
 
 const DrawerHeader = styled('div')(({ theme }) => ({
@@ -64,19 +72,28 @@ export default function SidebarTest() {
                         <ClearIcon />
                     </IconButton>
                 </DrawerHeader>
-                <List>
-                    <ListItem >
-                        <ListItemText primary="Home" />
-                    </ListItem>
-                    <ListItem >
-                        <ListItemText primary="About Us" />
-                    </ListItem>
-                    <ListItem >
-                        <ListItemText primary="Contact Us" />
-                    </ListItem>
+
+                <List style={{ paddingRight: 70, paddingLeft: 10 }}>
+                    {['Logout', 'gespeicherte Matches', 'Kontakt', 'Sprache', 'Einstellungen'].map((text, index) => (
+                        <ListItem key={text} disablePadding>
+                            <ListItemButton>
+                                <ListItemIcon>
+                                    {index === 0 ? <LogoutOutlinedIcon /> : null}
+                                    {index === 1 ? <GradeOutlinedIcon /> : null}
+                                    {index === 2 ? <ContactSupportOutlinedIcon /> : null}
+                                    {index === 3 ? <LanguageOutlinedIcon /> : null}
+                                    {index === 4 ? <SettingsOutlinedIcon /> : null}
+                                </ListItemIcon>
+                                <ListItemText primary={text} />
+                            </ListItemButton>
+                        </ListItem>
+                    ))}
                 </List>
             </Drawer>
 
         </>
     )
 }
+
+
+
