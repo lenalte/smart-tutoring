@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
 import Button from "@mui/material/Button";
@@ -21,8 +20,8 @@ export default function login() {
                 lineHeight: '37px',
                 color: '#000000'
             }}>
-                <Typography fontFamily={"Judson"} sx={{ fontSize: 27 }} variant="body1" lineHeight={1.2} paddingBottom={4} paddingTop={6} paddingLeft={1} color="black">
-                    sign in für smart tutoring
+                <Typography fontFamily={"Judson"} sx={{ fontSize: 29 }} variant="body1" lineHeight={1.2} paddingBottom={4} paddingTop={1} paddingLeft={1} color="black">
+                    sign in für <br /> smart tutoring
                 </Typography>
             </div>
 
