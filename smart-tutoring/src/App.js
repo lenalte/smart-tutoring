@@ -11,7 +11,6 @@ import SignUp from './pages/SignUp';
 import ProfileF from './pages/ProfileF';
 import MatchesF from './pages/MatchesF';
 import SetDate from './pages/SetDate';
-import SignIn from './pages/SignIn';
 
 function App() {
   return (
@@ -27,7 +26,6 @@ function App() {
         <Route path='profilefinder' element={<ProfileF />} />
         <Route path='matchesfinder' element={<MatchesF />} />
         <Route path='setdate' element={<SetDate />} />
-        <Route path='signin' element={<SignIn />} />
         {/* <Route path='*' element={<Home />} /> */}
       </Routes>
     </BrowserRouter>
