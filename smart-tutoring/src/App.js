@@ -9,6 +9,7 @@ import MatchesB from './pages/MatchesB';
 import ProfileB from './pages/ProfileB';
 import LoginPage from './pages/Login-SignUp';
 import ProfileF from './pages/ProfileF';
+import MatchesF from './pages/MatchesF';
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
         <Route path='matchesBecome' element={<MatchesB />} />
         <Route path='profileBecome' element={<ProfileB />} />
         <Route path='login' element={<LoginPage />} />
-        <Route path='profilef' element={<ProfileF />} />
+        <Route path='profilefinder' element={<ProfileF />} />
+        <Route path='matchesfinder' element={<MatchesF />} />
         {/* <Route path='*' element={<Home />} /> */}
       </Routes>
     </BrowserRouter>
