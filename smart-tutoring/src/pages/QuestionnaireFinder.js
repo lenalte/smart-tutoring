@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Skills from '../components/Skills';
+// import Skills from '../components/Skills';
 import { } from '@mui/icons-material';
 import HeaderBlack from '../components/HeaderBlack';
 import ProgressView from '../components/genericComponents/ProgressView';
@@ -25,7 +25,7 @@ const steps = [
     {
         title: <>Auf welche Schule geht Dein Kind <br />  aktuell/möchtes es gehen?</>,
         content: <SelectSchoolsFinder />
-        // Extra Component für Schools (zum Beispiel SchoolsFind.js) muss erstellt werden, da der Teil sich unterscheidet
+
     },
     {
         title: <>Wo wohnt ihr aktuell?</>,
@@ -38,10 +38,6 @@ const steps = [
     {
         title: <>Welche Sprachen  <br /> sprichst du/dein Kind?</>,
         content: <Languages />
-    },
-    {
-        title: <>Wie gut sprichst du/dein Kind <br /> diese Sprachen?</>,
-        content: <Skills />
     },
     {
         title: <>Etwas über dich/dein Kind (optional):</>,

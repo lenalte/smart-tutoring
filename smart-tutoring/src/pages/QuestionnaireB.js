@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Skills from '../components/Skills';
+// import Skills from '../components/Skills';
 import { } from '@mui/icons-material';
 import HeaderBlack from '../components/HeaderBlack';
 import ProgressView from '../components/genericComponents/ProgressView';
@@ -23,10 +23,6 @@ const steps = [
         title: <>Wie alt bist du?</>,
         content: <Age />
     },
-    // {
-    //     title: <>Wie alt bist du?</>,
-    //     content: <PickerDemo />
-    // },
     {
         title: <>Auf welchen Schulen <br /> warst/bist du?</>,
         content: <Schools />
@@ -43,10 +39,10 @@ const steps = [
         title: <>Welche Sprachen <br /> sprichst du?</>,
         content: <Languages />
     },
-    {
-        title: <>Wie gut sprichst du <br /> diese Sprachen?</>,
-        content: <Skills />
-    },
+    // {
+    //     title: <>Wie gut sprichst du <br /> diese Sprachen?</>,
+    //     content: <Skills />
+    // },
     {
         title: <>Etwas über dich (optional):</>,
         content: <Bio />
