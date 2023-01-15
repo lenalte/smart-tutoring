@@ -3,11 +3,12 @@ import { Box, Container } from "@mui/system"
 import ProgressLine from "../ProgressLine"
 import Button from "@mui/material/Button"
 
-const ProgressView = ({ steps, current, title, children, nextAction, nextLabel }) => {
+const ProgressView = ({ steps, current, title, children, nextAction, nextLabel, topContent }) => {
 
 
 
     return <><Container>
+        {topContent}
         <ProgressLine steps={steps} current={current} />
     </Container>
         <Container>
