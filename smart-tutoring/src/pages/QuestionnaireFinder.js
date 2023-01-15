@@ -10,9 +10,15 @@ import Subjects from '../components/Subjects';
 import Age from '../components/Age';
 import Hours from '../components/Hours';
 import SelectSchoolsFinder from '../components/SchoolsFinder';
+import Typography from '@mui/material/Typography';
 
 const steps = [
     {
+        topContent: <><Typography fontFamily={"Judson"} variant="h4" component="h2" lineHeight={1.5} paddingBottom={1} paddingTop={3}>
+            Willkommen XY
+        </Typography>
+            <Typography>
+                du musst nun ein paar Fragen beantworten, damit wir dich mit der richtigen Person matchen können!</Typography></>,
         title: <>Wie alt ist dein Kind?</>,
         content: <Age />
     },
@@ -51,7 +57,7 @@ const QuestionnaireFinder = () => {
     const [current, setCurrent] = useState(0);
     return <div className="App">
         <HeaderBlack />
-        <ProgressView steps={steps.length} current={current + 1} title={steps[current].title} nextLabel="next" nextAction={() => setCurrent(current + 1)}>
+        <ProgressView topContent={steps[current].topContent} steps={steps.length} current={current + 1} title={steps[current].title} nextLabel="next" nextAction={() => setCurrent(current + 1)}>
             {steps[current].content}
         </ProgressView>
     </div>
