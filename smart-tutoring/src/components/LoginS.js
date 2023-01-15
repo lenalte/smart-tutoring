@@ -5,13 +5,36 @@ import Grid from '@mui/material/Grid';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import Button from "@mui/material/Button"
+import Button from "@mui/material/Button";
 
 export default function login() {
     return (
-    <Grid>
-    <Button variant="outlined">Google</Button>
-    <Box paddingTop={1.5} paddingRight={2.5}
+        <Grid>
+            <div style={{
+                position: 'absolute',
+                width: '335px',
+                height: '79px',
+                left: '29px',
+                top: '100px',
+                fontFamily: 'Judson',
+                fontStyle: 'normal',
+                fontWeight: 400,
+                fontSize: '32px',
+                lineHeight: '37px',
+                color: '#000000'
+            }}>
+                <p>sign up für smart tutoring</p>
+            </div>
+
+            <Button style={{
+                position: 'absolute',
+                width: '315px',
+                height: '50px',
+                left: '34px',
+                top: '234px',
+
+            }} variant="outlined">Google</Button>
+            <Box paddingTop={1.5} paddingRight={2.5}
                 component="form"
                 sx={{
                     '& .MuiTextField-root': { m: 0.2, width: '38ch' },
@@ -19,61 +42,116 @@ export default function login() {
                 noValidate
                 autoComplete="off"
             ></Box>
-    <TextField 
-                    sx={{
-                        minWidth: '350',
-                    }}
-                    id="outlined-vorname"
-                    label="Vorname"
-                    defaultValue="Vorname"
-                />
-     <TextField
-                    sx={{
-                        minWidth: '350',
-                    }}
-                    id="outlined-nachname"
-                    label="Nachname"
-                    defaultValue="Nachname"
-                />
-     <TextField
-                    sx={{
-                        minWidth: '350',
-                    }}
-                    id="outlined-email"
-                    label="Email"
-                    defaultValue="Email"
-                />
-     <TextField
-                    sx={{
-                        minWidth: '350',
-                    }}
-                    id="outlined-password-input"
-                    label="Password"
-                    type="password"
-                    autoComplete="current-password"
-                />
-    <FormGroup
-   //{...label} defaultChecked color="default"
-   >
-        <FormControlLabel control={<Checkbox defaultChecked />} label="Nutzungsbedinungen zustimmen" />
-    </FormGroup>
-    <Button variant="contained"
-                sx={{ borderRadius: 50 }}
-                className='button'
-                //onClick={nextAction}
-                style={{
-                    position: 'fixed',
-                    width: '9em',
-                    justifyContent: 'center',
-                    left: '7em',
-                    bottom: '4em',
-                    color: 'white',
-                    fontFamily: 'Judson',
-                    fontSize: '17px',
-                    textTransform: 'none',
-                    padding: '8px 65px 8px 65px',
-                    backgroundColor: 'black',
+            <Box
+                component="form"
+                sx={{
+                    '& .MuiTextField-root': { m: 1, width: '25ch' },
+                }}
+                noValidate
+                autoComplete="off"
+            ></Box>
+            <Grid>
+                <div style={{
+                    position: 'absolute',
+                    width: '315px',
+                    height: '50px',
+                    left: '34px',
+                    top: '351px',
                 }}>
-                sign up</Button>
-    </Grid>
-)}
+                    <TextField
+                        sx={{
+                            minWidth: '350',
+                        }}
+                        id="outlined-vorname"
+                        label="Vorname"
+                        defaultValue="Vorname"
+                    />
+                </div>
+                <div style={{
+                    position: 'absolute',
+                    width: '315px',
+                    height: '50px',
+                    left: '34px',
+                    top: '435px',
+                }}>
+                    <TextField
+                        sx={{
+                            minWidth: '350',
+                        }}
+                        id="outlined-nachname"
+                        label="Nachname"
+                        defaultValue="Nachname"
+                    />
+                </div>
+                <div style={{
+                    position: 'absolute',
+                    width: '315px',
+                    height: '50px',
+                    left: '34px',
+                    top: '522px',
+                }}>
+                    <TextField
+                        sx={{
+                            minWidth: '350',
+                        }}
+                        id="outlined-email"
+                        label="Email"
+                        defaultValue="Email"
+                    />
+                </div>
+                <div style={{
+                    position: 'absolute',
+                    width: '315px',
+                    height: '50px',
+                    left: '34px',
+                    top: '609px',
+                }}>
+                    <TextField
+                        sx={{
+                            minWidth: '350',
+                        }}
+                        id="outlined-password-input"
+                        label="Password"
+                        type="password"
+                        autoComplete="current-password"
+                    />
+                </div>
+                <div style={{
+                    position: 'absolute',
+                    width: '315px',
+                    height: '50px',
+                    left: '34px',
+                    top: '675px',
+                }}>
+                    <FormGroup
+                    //{...label} defaultChecked color="default"
+                    >
+                        <FormControlLabel control={<Checkbox defaultChecked />} label="Nutzungsbedinungen zustimmen" />
+                    </FormGroup>
+                </div>
+                <Button variant="contained"
+                    sx={{ borderRadius: 50 }}
+                    className='button'
+                    //onClick={nextAction}
+                    style={{
+                        position: 'absolute',
+                        height: '46px',
+                        width: '189px',
+                        justifyContent: 'center',
+                        left: '97px',
+                        top: '717px',
+                        bottom: '4em',
+                        color: 'white',
+                        fontFamily: 'Judson',
+                        fontSize: '17px',
+                        textTransform: 'none',
+                        padding: '8px 65px 8px 65px',
+                        backgroundColor: 'black',
+                    }}>
+                    sign up</Button>
+
+
+            </Grid>
+        </Grid>
+    )
+}
