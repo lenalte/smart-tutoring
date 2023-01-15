@@ -11,7 +11,7 @@ export default function login() {
     return (
     <Grid>
     <Button variant="outlined">Google</Button>
-    <Box
+    <Box paddingTop={1.5} paddingRight={2.5}
                 component="form"
                 sx={{
                     '& .MuiTextField-root': { m: 0.2, width: '38ch' },
@@ -19,7 +19,7 @@ export default function login() {
                 noValidate
                 autoComplete="off"
             ></Box>
-    <TextField
+    <TextField 
                     sx={{
                         minWidth: '350',
                     }}

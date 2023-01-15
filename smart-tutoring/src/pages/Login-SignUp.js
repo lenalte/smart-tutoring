@@ -1,10 +1,10 @@
 import LoginS from '../components/LoginS'
 
 const Login = () => {
-    return (
+    return <div>
         <LoginS />
-    )
-
+    
+        </div>
 }
 
 export default Login;

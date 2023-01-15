@@ -8,6 +8,7 @@ import QuestionnaireFinder from './pages/QuestionnaireFinder';
 import MatchesB from './pages/MatchesB';
 import ProfileB from './pages/ProfileB';
 import LoginPage from './pages/Login-SignUp';
+import ProfileF from './pages/ProfileF';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path='matchesBecome' element={<MatchesB />} />
         <Route path='profileBecome' element={<ProfileB />} />
         <Route path='login' element={<LoginPage />} />
+        <Route path='profilef' element={<ProfileF />} />
         {/* <Route path='*' element={<Home />} /> */}
       </Routes>
     </BrowserRouter>
