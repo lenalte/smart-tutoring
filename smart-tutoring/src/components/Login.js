@@ -1,0 +1,82 @@
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import Grid from '@mui/material/Grid';
+import Button from "@mui/material/Button";
+
+export default function login() {
+    return (
+        <Grid>
+            <div style={{
+                position: 'absolute',
+                width: '335px',
+                height: '79px',
+                left: '29px',
+                top: '100px',
+                fontFamily: 'Judson',
+                fontStyle: 'normal',
+                fontWeight: 400,
+                fontSize: '32px',
+                lineHeight: '37px',
+                color: '#000000'
+            }}>
+                <p>sign in für smart tutoring</p>
+            </div>
+
+            <div style={{
+                position: 'absolute',
+                width: '315px',
+                height: '50px',
+                left: '34px',
+                top: '234px',
+            }}>
+                <TextField
+                    sx={{
+                        minWidth: '350',
+                    }}
+                    id="outlined-email"
+                    label="Email"
+                    defaultValue="Email"
+                />
+            </div>
+            <div style={{
+                    position: 'absolute',
+                    width: '315px',
+                    height: '50px',
+                    left: '34px',
+                    top: '318px',
+                }}>
+                <TextField
+                    sx={{
+                        minWidth: '350',
+                    }}
+                    id="outlined-password-input"
+                    label="Password"
+                    type="password"
+                    autoComplete="current-password"
+                />
+            </div>
+            <Button variant="contained"
+                sx={{ borderRadius: 50 }}
+                className='button'
+                //onClick={nextAction}
+                style={{
+                    position: 'absolute',
+                    height: '46px',
+                    width: '189px',
+                    justifyContent: 'center',
+                    left: '97px',
+                    top: '717px',
+                    bottom: '4em',
+                    color: 'white',
+                    fontFamily: 'Judson',
+                    fontSize: '17px',
+                    textTransform: 'none',
+                    padding: '8px 65px 8px 65px',
+                    backgroundColor: 'black',
+                }}>
+                sign in</Button>
+        </Grid>
+
+    )
+}

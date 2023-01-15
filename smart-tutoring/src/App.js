@@ -1,5 +1,5 @@
 import './App.css';
-import { } from '@mui/icons-material';
+import { SignpostOutlined } from '@mui/icons-material';
 import Home from './pages/Home';
 // import HeaderBlack from './components/HeaderBlack';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -7,10 +7,11 @@ import QuestionnaireB from './pages/QuestionnaireB';
 import QuestionnaireFinder from './pages/QuestionnaireFinder';
 import MatchesB from './pages/MatchesB';
 import ProfileB from './pages/ProfileB';
-import LoginPage from './pages/Login-SignUp';
+import SignUp from './pages/SignUp';
 import ProfileF from './pages/ProfileF';
 import MatchesF from './pages/MatchesF';
 import SetDate from './pages/SetDate';
+import SignIn from './pages/SignIn';
 
 function App() {
   return (
@@ -22,10 +23,11 @@ function App() {
         <Route path='questionnaireFind' element={<QuestionnaireFinder />} />
         <Route path='matchesBecome' element={<MatchesB />} />
         <Route path='profileBecome' element={<ProfileB />} />
-        <Route path='login' element={<LoginPage />} />
+        <Route path='login' element={<SignUp />} />
         <Route path='profilefinder' element={<ProfileF />} />
         <Route path='matchesfinder' element={<MatchesF />} />
         <Route path='setdate' element={<SetDate />} />
+        <Route path='signin' element={<SignIn />} />
         {/* <Route path='*' element={<Home />} /> */}
       </Routes>
     </BrowserRouter>

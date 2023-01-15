@@ -1,14 +1,13 @@
 import * as React from 'react';
-import LoginS from '../components/LoginS'
+import Login from '../components/Login'
 import HeaderBlack from '../components/HeaderBlack';
 
-const Login = () => {
+const SignIn = () => {
     return <div>
         <HeaderBlack/>
-        <LoginS />
+        <Login />
     
         </div>
 }
 
-export default Login;
-
+export default SignIn;
