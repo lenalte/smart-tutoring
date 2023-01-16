@@ -5,12 +5,26 @@ import Checkbox from '@mui/material/Checkbox';
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import Grid from '@mui/material/Grid';
+import Skills from './Skills';
+import { Box } from '@mui/system';
+// import { createFilterOptions } from '@mui/material/Autocomplete';
+
+
+
 
 
 const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
 const checkedIcon = <CheckBoxIcon fontSize="small" />;
 
 export default function Languages() {
+
+  const [selectedLanguages, setSelectedLanguages] = React.useState([]);
+
+  const handleChange = (event, newValue) => {
+    setSelectedLanguages(newValue);
+
+  };
+
   return (
     <Grid>
       <Autocomplete
@@ -34,10 +48,24 @@ export default function Languages() {
         renderInput={(params) => (
           <TextField {...params} label="Sprache auswählen" placeholder="Sprachen" />
         )}
+        onChange={handleChange}
       />
+      <Box paddingTop={4}>
+        <Skills selectedLanguages={selectedLanguages} />
+      </Box>
+      {/* <div>
+        Selected languages: {selectedLanguages.map((language) => language.title).join(', ')}
+      </div> */}
     </Grid>
+
   );
 }
+
+
+
+
+
+
 
 
 const languages = [
@@ -69,3 +97,6 @@ const languages = [
   { title: 'Ukrainisch' },
   { title: 'Ungarisch' },
 ];
+
+// export const selectedLanguages = React.useState([]);
+export const selectedLanguages = "hallo"

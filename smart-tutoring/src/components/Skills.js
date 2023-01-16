@@ -8,40 +8,51 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Stack from '@mui/material/Stack';
 
-const card = (
-    <React.Fragment>
-        <CardContent>
-            <Typography sx={{ fontSize: 16 }} color="text.primary" gutterBottom>
-                Sprache
-            </Typography>
-            <CardActions>
-                <Slider
-                    size="small"
-                    defaultValue={1}
-                    aria-label="Small"
-                    valueLabelDisplay="auto"
-                    style={{ color: "#eb4034" }}
-                />
-            </CardActions>
-            <Stack direction="row" spacing={6.5}>
-                <Typography sx={{ mb: 1.5, fontSize: 13 }} color="text.secondary">
-                    schlecht
-                </Typography>
-                <Typography sx={{ mb: 1.5, fontSize: 13 }} color="text.secondary">
-                    mittel
-                </Typography>
-                <Typography sx={{ mb: 1.5, fontSize: 13 }} color="text.secondary">
-                    gut
-                </Typography>
-                <Typography sx={{ mb: 1.5, fontSize: 13 }} color="text.secondary">
-                    fließend
-                </Typography>
-            </Stack>
-        </CardContent>
-    </React.Fragment>
-);
 
-export default function Skills() {
+
+
+
+export default function Skills({ selectedLanguages }) {
+
+    const card = (
+        <Grid paddingBottom={20}>
+            {selectedLanguages.map((language) => (
+
+
+                <React.Fragment>
+                    <CardContent>
+                        <Typography sx={{ fontSize: 16 }} color="text.primary" gutterBottom>
+                            {language.title}:
+                        </Typography>
+                        <CardActions>
+                            <Slider
+                                size="small"
+                                defaultValue={1}
+                                aria-label="Small"
+                                valueLabelDisplay="auto"
+                                style={{ color: "#eb4034" }}
+                            />
+                        </CardActions>
+                        <Stack direction="row" spacing={6.5}>
+                            <Typography sx={{ mb: 1.5, fontSize: 13 }} color="text.secondary">
+                                schlecht
+                            </Typography>
+                            <Typography sx={{ mb: 1.5, fontSize: 13 }} color="text.secondary">
+                                mittel
+                            </Typography>
+                            <Typography sx={{ mb: 1.5, fontSize: 13 }} color="text.secondary">
+                                gut
+                            </Typography>
+                            <Typography sx={{ mb: 1.5, fontSize: 13 }} color="text.secondary">
+                                fließend
+                            </Typography>
+                        </Stack>
+                    </CardContent>
+                </React.Fragment>
+            ))}
+        </Grid>
+    );
+
     return (
         <Grid>
             <Box sx={{ minWidth: 340 }}>

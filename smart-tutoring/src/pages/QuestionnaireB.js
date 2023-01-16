@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Skills from '../components/Skills';
+// import Skills from '../components/Skills';
 import { } from '@mui/icons-material';
 import HeaderBlack from '../components/HeaderBlack';
 import ProgressView from '../components/genericComponents/ProgressView';
@@ -10,17 +10,19 @@ import Bio from '../components/Bio';
 import Subjects from '../components/Subjects';
 import Age from '../components/Age';
 import Hours from '../components/Hours';
+import { Typography } from '@mui/material';
 // import PickerDemo from '../components/Picker';
 
 const steps = [
     {
+        topContent: <><Typography fontFamily={"Judson"} variant="h4" component="h2" lineHeight={1.5} paddingBottom={1} paddingTop={3}>
+            Willkommen XY
+        </Typography>
+            <Typography>
+                du musst nun ein paar Fragen beantworten, damit wir dich mit der richtigen Person matchen können!</Typography></>,
         title: <>Wie alt bist du?</>,
         content: <Age />
     },
-    // {
-    //     title: <>Wie alt bist du?</>,
-    //     content: <PickerDemo />
-    // },
     {
         title: <>Auf welchen Schulen <br /> warst/bist du?</>,
         content: <Schools />
@@ -37,10 +39,10 @@ const steps = [
         title: <>Welche Sprachen <br /> sprichst du?</>,
         content: <Languages />
     },
-    {
-        title: <>Wie gut sprichst du <br /> diese Sprachen?</>,
-        content: <Skills />
-    },
+    // {
+    //     title: <>Wie gut sprichst du <br /> diese Sprachen?</>,
+    //     content: <Skills />
+    // },
     {
         title: <>Etwas über dich (optional):</>,
         content: <Bio />
@@ -53,9 +55,10 @@ const steps = [
 
 const QuestionnaireB = () => {
     const [current, setCurrent] = useState(0);
+
     return <div className="App">
         <HeaderBlack />
-        <ProgressView steps={steps.length} current={current + 1} title={steps[current].title} nextLabel="next" nextAction={() => setCurrent(current + 1)}>
+        <ProgressView topContent={steps[current].topContent} steps={steps.length} current={current + 1} title={steps[current].title} nextLabel="next" nextAction={() => setCurrent(current + 1)}>
             {steps[current].content}
         </ProgressView>
     </div>
