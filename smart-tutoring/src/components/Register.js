@@ -24,7 +24,7 @@ export default function login() {
                 lineHeight: '37px',
                 color: '#000000'
             }}>
-                <Typography fontFamily={"Judson"} sx={{ fontSize: 27 }} variant="body1" lineHeight={1.2} paddingBottom={4} paddingTop={6} paddingLeft={1} color="black">
+                <Typography fontFamily={"Judson"} sx={{ fontSize: 32 }} variant="body1" lineHeight={1.2} paddingBottom={4} paddingTop={6} paddingLeft={1} color="black">
                     sign up für smart tutoring
                 </Typography>
             </div>
