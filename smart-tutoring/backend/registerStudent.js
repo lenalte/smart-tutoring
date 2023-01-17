@@ -8,6 +8,7 @@ const User = require('./models/userStudent')
 const bp = require('body-parser')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs');
+const router = express.Router();
 
 require('dotenv').config()
 app.use(bp.json())
@@ -33,7 +34,7 @@ function generateToken(email) {
 
 
 // POST mongoose Endpoint
-app.post('/users', async (req, res) => {
+router.post('/users', async (req, res) => {
     try {
         console.log("body", req.body);
 
