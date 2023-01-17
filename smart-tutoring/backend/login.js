@@ -3,10 +3,11 @@ import User from './models/userStudent';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
+
 const app = express();
 
 app.use(express.json({ limit: "50mb" }));
-
+  
 app.post("/register", async (req, res) => {
     try {
         const { first_name, last_name, email, passwort } = req.body;
@@ -43,8 +44,6 @@ app.post("/register", async (req, res) => {
         console.log(err);
     }
 });
-
-
 
 
 // function generateToken(email) {

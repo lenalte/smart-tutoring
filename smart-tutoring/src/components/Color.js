@@ -1,7 +1,6 @@
-import { createMuiTheme, ThemeProvider } from '@mui/core/styles';
-import { App } from '../App';
+import { createTheme } from '@mui/material/styles';
 
-const theme = createMuiTheme({
+const theme = createTheme({
   palette: {
     primary: {
         light: '#FF453C',
@@ -18,15 +17,7 @@ const theme = createMuiTheme({
   }
 });
 
-function myApp() {
-  return (
-    <ThemeProvider theme={theme}>
-      <App />
-    </ThemeProvider>
-  );
-}
-
-export default myApp;
+export default theme;
 
 
 
