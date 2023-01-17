@@ -7,12 +7,16 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import Button from "@mui/material/Button";
 import Typography from '@mui/material/Typography';
-import QuestionnaireB from '../pages/QuestionnaireB';
-import QuestionnaireFinder from '../pages/QuestionnaireFinder';
+import { useNavigate } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 // import SignUp from '../pages/QuestionnaireB';
 
 export default function Login() {
-    const [buttonClicked, setButtonClicked] = React.useState(null);
+    const navigate = useNavigate();
+    // eslint-disable-next-line
+    const [searchParams, _] = useSearchParams();
+    const targetPath = searchParams.get("targetPath");
+
     return (
         <Grid>
             <div style={{
@@ -156,7 +160,21 @@ export default function Login() {
                 <Button variant="contained"
                     sx={{ borderRadius: 50 }}
                     className='button'
-                    onClick={buttonClicked === "findTutor" ? <QuestionnaireFinder /> : <QuestionnaireB />}
+                    onClick={() => {
+                        switch (targetPath) {
+                            case 'findTutor':
+                                navigate('/questionnaireFind');
+                                console.log('Hello')
+                                break;
+                            case 'becomeTutor':
+                                navigate('/questionnaireBecome');
+                                console.log('Hello2')
+                                break;
+                            default:
+                                console.log('Hello3')
+                                navigate('/');
+                        }
+                    }}
                     // href='/questionnaireBecome'
                     style={{
                         position: 'absolute',
@@ -192,7 +210,23 @@ export default function Login() {
                 <Button variant="contained"
                     sx={{ borderRadius: 50 }}
                     className='button'
-                    href='/signin'
+                    onClick={() => {
+                        switch (targetPath) {
+                            case 'findTutor':
+                                navigate(`/signin?targetPath=findTutor`);
+                                console.log('Hello')
+                                break;
+                            case 'becomeTutor':
+                                navigate(`/signin?targetPath=becomeTutor`);
+                                console.log('Hello2')
+                                break;
+                            default:
+                                console.log('Hello3')
+                                navigate('/');
+                        }
+                    }}
+                    // onClick={() => { navigate(`/signin?targetPath=targetPath`) }}
+                    // href='/signin'
                     style={{
                         position: 'absolute',
                         height: '28px',

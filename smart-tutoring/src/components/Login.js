@@ -3,8 +3,15 @@ import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
 import Button from "@mui/material/Button";
 import Typography from '@mui/material/Typography';
+import { useNavigate } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 
-export default function login() {
+export default function Login() {
+    const navigate = useNavigate();
+    // eslint-disable-next-line
+    const [searchParams, _] = useSearchParams();
+    const targetPath = searchParams.get("targetPath");
+
     return (
         <Grid>
             <div style={{
@@ -61,7 +68,22 @@ export default function login() {
             <Button variant="contained"
                 sx={{ borderRadius: 50 }}
                 className='button'
-                href='/questionnaireBecome'
+                onClick={() => {
+                    switch (targetPath) {
+                        case 'findTutor':
+                            navigate('/questionnaireFind');
+                            console.log('Hello')
+                            break;
+                        case 'becomeTutor':
+                            navigate('/questionnaireBecome');
+                            console.log('Hello2')
+                            break;
+                        default:
+                            console.log('Hello3')
+                            navigate('/');
+                    }
+                }}
+                // href='/questionnaireBecome'
                 style={{
                     position: 'absolute',
                     height: '46px',

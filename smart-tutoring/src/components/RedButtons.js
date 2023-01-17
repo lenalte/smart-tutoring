@@ -1,20 +1,21 @@
 import * as React from 'react';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
+import { useNavigate } from 'react-router-dom';
 // import Box from '@mui/material/Box';
 
 
 
 
 export default function RedButtons() {
-    const [buttonClicked, setButtonClicked] = React.useState(null);
+    const navigate = useNavigate();
 
     return (
         <Stack spacing={7} paddingTop={20}>
             <Button variant="contained"
                 sx={{ borderRadius: 50 }}
                 className='button'
-                onClick={() => setButtonClicked("findTutor")}
+                onClick={() => { navigate(`/login?targetPath=findTutor`) }}
                 style={{
                     position: 'absolute',
                     // width: '9em',
@@ -33,7 +34,7 @@ export default function RedButtons() {
             <Button variant="contained"
                 sx={{ borderRadius: 50 }}
                 className='button'
-                onClick={() => setButtonClicked("becomeTutor")}
+                onClick={() => { navigate(`/login?targetPath=becomeTutor`) }}
                 style={{
                     position: 'absolute',
                     // width: '9em',

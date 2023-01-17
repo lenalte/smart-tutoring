@@ -4,11 +4,9 @@ import HeaderBlack from '../components/HeaderBlack';
 
 const Login = () => {
 
-
     return <div>
         <HeaderBlack />
         <Register />
-
     </div>
 }
 
