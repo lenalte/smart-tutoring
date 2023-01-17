@@ -4,12 +4,12 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import QuestionnaireB from './pages/QuestionnaireB';
 import QuestionnaireFinder from './pages/QuestionnaireFinder';
 import MatchesB from './pages/MatchesB';
-import ProfileB from './pages/ProfileB';
+import ProfileFind from './pages/ProfileFindTutor';
 import SignUp from './pages/SignUp';
-import ProfileF from './pages/ProfileF';
 import MatchesF from './pages/MatchesF';
 import SetDate from './pages/SetDate';
 import SignIn from './pages/SignIn';
+import ProfileSelf from './pages/ProfileTutorSelf';
 
 function App() {
   return (
@@ -19,12 +19,12 @@ function App() {
         <Route path='questionnaireBecome' element={<QuestionnaireB />} />
         <Route path='questionnaireFind' element={<QuestionnaireFinder />} />
         <Route path='matchesBecome' element={<MatchesB />} />
-        <Route path='profileBecome' element={<ProfileB />} />
+        <Route path='profileFind' element={<ProfileFind />} />
         <Route path='login' element={<SignUp />} />
-        <Route path='profilefinder' element={<ProfileF />} />
         <Route path='matchesfinder' element={<MatchesF />} />
         <Route path='setdate' element={<SetDate />} />
         <Route path='signin' element={<SignIn />} />
+        <Route path='profileSelf' element={<ProfileSelf />} />
       </Routes>
     </BrowserRouter>
   );

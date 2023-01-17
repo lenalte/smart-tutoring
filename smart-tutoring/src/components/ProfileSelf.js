@@ -66,7 +66,7 @@ export default function Profile() {
 
 
     return (
-        <Stack paddingTop={6} paddingLeft={2}>
+        <Stack paddingTop={8} paddingLeft={2}>
             <Grid container spacing={2}>
                 <Grid item xs={2.5}>
                     <Avatar src="/broken-image.jpg" sx={{ width: 56, height: 56 }} />
@@ -74,7 +74,7 @@ export default function Profile() {
                 <Grid item xs={8}>
                     <Box>
                         <Typography fontFamily={"Judson"} sx={{ fontSize: 20 }} variant="body1" lineHeight={1.2} color="black">
-                            <p>Vorname Nachname,<br/> Alter des Kindes</p>
+                            Vorname Nachname, Alter
                         </Typography>
 
                         <Rating name="read-only" value={3} readOnly size="small" style={{ paddingTop: 8, color: '#ff453c' }} />
@@ -100,7 +100,7 @@ export default function Profile() {
             <Button variant="contained"
                 sx={{ borderRadius: 50 }}
                 className='button'
-                // onClick={nextAction}
+                href='/setdate'
                 style={{
                     position: 'fixed',
                     width: '9em',

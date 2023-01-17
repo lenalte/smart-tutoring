@@ -37,7 +37,7 @@ export default function Matches() {
             <Link
                 overlay
                 underline="none"
-                href="/profileBecome">
+                href="/profileFind">
                 <Card sx={{ minWidth: 250 }} style={{ backgroundColor: "#e5e5e5" }}>
                     <CardContent>
                         {/* <Stack direction="row" spacing={2}> */}

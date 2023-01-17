@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Profile from '../components/Profile';
+import Profile from '../components/ProfileSelf';
 import Stack from '@mui/material/Stack';
 import HeaderBlack from '../components/HeaderBlack';
 

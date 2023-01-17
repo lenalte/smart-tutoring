@@ -39,7 +39,7 @@ const ProgressView = ({ steps, current, title, children, nextAction, nextLabel, 
                     if (current === steps - 1) {
                         switch (targetPath) {
                             case 'becomeTutor':
-                                navigate(`/profileBecome?targetPath=becomeTutor`);
+                                navigate(`/profileSelf?targetPath=becomeTutor`);
                                 console.log('Hello')
                                 break;
                             case 'findTutor':

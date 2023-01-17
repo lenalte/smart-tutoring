@@ -1,10 +1,10 @@
 import * as React from 'react';
-import Profile from '../components/ProfileFinder';
+import Profile from '../components/ProfileFind';
 import Stack from '@mui/material/Stack';
 import HeaderBlack from '../components/HeaderBlack';
 
 
-const ProfileF = () => {
+const ProfileB = () => {
     return <div>
         <Stack>
             <HeaderBlack />
@@ -13,4 +13,4 @@ const ProfileF = () => {
     </div>
 }
 
-export default ProfileF;
+export default ProfileB;
