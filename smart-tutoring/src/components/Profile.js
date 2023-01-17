@@ -11,6 +11,8 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import IconButton from '@mui/material/IconButton';
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
     height: 10,
@@ -66,7 +68,12 @@ export default function Profile() {
 
 
     return (
-        <Stack paddingTop={6} paddingLeft={2}>
+        <Stack paddingTop={1} paddingLeft={2}>
+            <Box paddingBottom={3} paddingLeft={0.5}>
+                <IconButton href='/matchesBecome'>
+                    <ArrowBackIosIcon fontSize='medium' />
+                </IconButton>
+            </Box>
             <Grid container spacing={2}>
                 <Grid item xs={2.5}>
                     <Avatar src="/broken-image.jpg" sx={{ width: 56, height: 56 }} />
@@ -100,7 +107,7 @@ export default function Profile() {
             <Button variant="contained"
                 sx={{ borderRadius: 50 }}
                 className='button'
-                // onClick={nextAction}
+                href='/setdate'
                 style={{
                     position: 'fixed',
                     width: '9em',

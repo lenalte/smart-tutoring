@@ -7,8 +7,12 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import Button from "@mui/material/Button";
 import Typography from '@mui/material/Typography';
+import QuestionnaireB from '../pages/QuestionnaireB';
+import QuestionnaireFinder from '../pages/QuestionnaireFinder';
+// import SignUp from '../pages/QuestionnaireB';
 
-export default function login() {
+export default function Login() {
+    const [buttonClicked, setButtonClicked] = React.useState(null);
     return (
         <Grid>
             <div style={{
@@ -152,7 +156,8 @@ export default function login() {
                 <Button variant="contained"
                     sx={{ borderRadius: 50 }}
                     className='button'
-                    //onClick={nextAction}
+                    onClick={buttonClicked === "findTutor" ? <QuestionnaireFinder /> : <QuestionnaireB />}
+                    // href='/questionnaireBecome'
                     style={{
                         position: 'absolute',
                         height: '46px',
@@ -187,7 +192,7 @@ export default function login() {
                 <Button variant="contained"
                     sx={{ borderRadius: 50 }}
                     className='button'
-                    //onClick={nextAction}
+                    href='/signin'
                     style={{
                         position: 'absolute',
                         height: '28px',

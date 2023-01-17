@@ -10,6 +10,7 @@ import LinearProgress, { linearProgressClasses } from '@mui/material/LinearProgr
 import { styled } from '@mui/material/styles';
 import Chip from '@mui/material/Chip';
 import Grid from '@mui/material/Unstable_Grid2';
+import Link from '@mui/material/Link';
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
     height: 9,
@@ -33,37 +34,43 @@ export default function Matches() {
 
     return (
         <Stack style={{ paddingLeft: 10, paddingRight: 10 }}>
-            <Card sx={{ minWidth: 250 }} style={{ backgroundColor: "#e5e5e5" }}>
-                <CardContent>
-                    {/* <Stack direction="row" spacing={2}> */}
-                    <Grid container spacing={3}>
-                        <Grid xs={3}>
-                            <Box>
-                                <Avatar src="/broken-image.jpg" sx={{ width: 56, height: 56 }} />
-                                <Rating name="read-only" value={3} readOnly size="small" style={{ paddingTop: 8, color: '#ff453c' }} />
-                            </Box>
+            <Link
+                overlay
+                underline="none"
+                href="/profileBecome">
+                <Card sx={{ minWidth: 250 }} style={{ backgroundColor: "#e5e5e5" }}>
+                    <CardContent>
+                        {/* <Stack direction="row" spacing={2}> */}
+                        <Grid container spacing={3}>
+                            <Grid xs={3}>
+                                <Box>
+                                    <Avatar src="/broken-image.jpg" sx={{ width: 56, height: 56 }} />
+                                    <Rating name="read-only" value={3} readOnly size="small" style={{ paddingTop: 8, color: '#ff453c' }} />
+                                </Box>
+                            </Grid>
+                            <Grid xs={6}>
+                                <Typography fontFamily={"Judson"} sx={{ fontSize: 17 }} variant="body1" color="black" gutterBottom>
+
+                                    Vorname Nachname <br /> Alter
+                                </Typography>
+                            </Grid>
+                            <Grid xs={3} paddingTop={2.5}>
+                                <BorderLinearProgress variant="determinate" value={50} />
+                            </Grid>
                         </Grid>
-                        <Grid xs={6}>
-                            <Typography fontFamily={"Judson"} sx={{ fontSize: 17 }} variant="body1" color="black" gutterBottom>
-                                Vorname Nachname <br /> Alter
-                            </Typography>
-                        </Grid>
-                        <Grid xs={3} paddingTop={2.5}>
-                            <BorderLinearProgress variant="determinate" value={50} />
-                        </Grid>
-                    </Grid>
-                    {/* </Stack> */}
-                    <Grid container spacing={1} style={{ paddingTop: 9 }}>
-                        {subjects.map(subject => <Grid xs="auto">
-                            <Chip label={subject} variant={'outlined'} />
-                        </Grid>)}
-                    </Grid >
+                        {/* </Stack> */}
+                        <Grid container spacing={1} style={{ paddingTop: 9 }}>
+                            {subjects.map(subject => <Grid xs="auto">
+                                <Chip label={subject} variant={'outlined'} />
+                            </Grid>)}
+                        </Grid >
 
 
-                </CardContent>
-            </Card>
+                    </CardContent>
+                </Card>
+            </Link>
 
-        </Stack>
+        </Stack >
     )
 }
 

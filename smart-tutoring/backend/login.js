@@ -47,4 +47,27 @@ app.post("/register", async (req, res) => {
 
 
 
+// function generateToken(email) {
+//     return jwt.sign({ email }, process.env.JWT_SECRET, { expiresIn: "5m" });
+//   }
+
+// // POST/users/login Endpoint
+// app.post('/users/login', async (req, res) => {
+//     const { email, password } = req.body
+//     const user = await User.findOne({ email })
+//     console.log("User found:", user);
+  
+//     if (!user) {
+//       return res.status(404).send({ status: "Wrong email" })
+//     }
+//     if (await bcrypt.compare(req.body.password, user.password)) {
+//       const token = generateToken(req.body.email);
+//       return res.status(201).json({ token: token });
+//     }
+  
+//     res.status(404).send({ status: "Wrong password" })
+//   })
+
+
+
 
