@@ -11,7 +11,6 @@ import {
   // PickersDayProps 
 } from '@mui/x-date-pickers/PickersDay';
 
-
 dayjs.extend(isBetweenPlugin);
 
 const CustomPickersDay = styled(PickersDay, {
@@ -20,7 +19,7 @@ const CustomPickersDay = styled(PickersDay, {
 })(({ theme, dayIsBetween, isFirstDay, isLastDay }) => ({
   ...(dayIsBetween && {
     borderRadius: 0,
-    backgroundColor: theme.palette.primary.main,
+    backgroundColor: '#FF453C',
     color: theme.palette.common.white,
     '&:hover, &:focus': {
       backgroundColor: theme.palette.primary.dark,
@@ -81,3 +80,4 @@ export default function CustomDay() {
       />
     </LocalizationProvider>)
 }
+
