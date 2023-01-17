@@ -39,10 +39,6 @@ const steps = [
         title: <>Welche Sprachen <br /> sprichst du?</>,
         content: <Languages />
     },
-    // {
-    //     title: <>Wie gut sprichst du <br /> diese Sprachen?</>,
-    //     content: <Skills />
-    // },
     {
         title: <>Etwas über dich (optional):</>,
         content: <Bio />

@@ -2,8 +2,16 @@ import { Typography } from "@mui/material"
 import { Box, Container } from "@mui/system"
 import ProgressLine from "../ProgressLine"
 import Button from "@mui/material/Button"
+import { useNavigate } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
+
 
 const ProgressView = ({ steps, current, title, children, nextAction, nextLabel, topContent }) => {
+
+    const navigate = useNavigate();
+    // eslint-disable-next-line
+    const [searchParams, _] = useSearchParams();
+    const targetPath = searchParams.get("targetPath");
 
 
 
@@ -25,7 +33,28 @@ const ProgressView = ({ steps, current, title, children, nextAction, nextLabel, 
             <Button variant="contained"
                 sx={{ borderRadius: 50 }}
                 className='button'
-                onClick={nextAction}
+                // onClick={nextAction}
+                onClick={() => {
+                    console.log('length', steps)
+                    if (current === steps - 1) {
+                        switch (targetPath) {
+                            case 'becomeTutor':
+                                navigate(`/profileBecome?targetPath=becomeTutor`);
+                                console.log('Hello')
+                                break;
+                            case 'findTutor':
+                                navigate(`/matchesfinder?targetPath=findTutor`);
+                                console.log('Hello2')
+                                break;
+                            default:
+                                console.log('Hello3')
+                                navigate('/');
+                        }
+                        // navigate('/profileBecome');
+                    } else {
+                        nextAction();
+                    }
+                }}
                 style={{
                     position: 'fixed',
                     width: '9em',

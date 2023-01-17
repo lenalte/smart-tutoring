@@ -163,11 +163,11 @@ export default function Login() {
                     onClick={() => {
                         switch (targetPath) {
                             case 'findTutor':
-                                navigate('/questionnaireFind');
+                                navigate(`/questionnaireFind?targetPath=findTutor`);
                                 console.log('Hello')
                                 break;
                             case 'becomeTutor':
-                                navigate('/questionnaireBecome');
+                                navigate(`/questionnaireBecome?targetPath=becomeTutor`);
                                 console.log('Hello2')
                                 break;
                             default:
