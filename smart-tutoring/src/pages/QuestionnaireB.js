@@ -54,10 +54,15 @@ const QuestionnaireB = () => {
 
     return <div className="App">
         <HeaderBlack />
-        <ProgressView topContent={steps[current].topContent} steps={steps.length} current={current + 1} title={steps[current].title} nextLabel="next" nextAction={() => setCurrent(current + 1)}>
+        <ProgressView topContent={steps[current].topContent} steps={steps.length} current={current + 1} title={steps[current].title} nextLabel="next" nextAction={(event) => {
+            console.log(event);
+            setCurrent(current + 1);
+
+        }}>
             {steps[current].content}
         </ProgressView>
-    </div>
+    </div >
+
 }
 
 export default QuestionnaireB;

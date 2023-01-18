@@ -14,6 +14,7 @@ export default function Age() {
 
     const handleChange = (event) => {
         setAge(event.target.value);
+        console.log(event.target.value);
     };
 
     const numbers = [...Array(99).keys()];
