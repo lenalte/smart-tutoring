@@ -21,8 +21,7 @@ const GenericTextArea = (label, value, onChange) => {
                 value={value}
                 onChange={changeHandler}
                 id="outlined-multiline-static"
-                multiline
-                rows={8}
+            // multiline
             />
         </Box>
         // <FormControl>

@@ -1,14 +1,17 @@
 import * as React from 'react';
-import Register from '../components/Register'
+// import Register from '../components/Register'
 import HeaderBlack from '../components/HeaderBlack';
+import RegisterForm from '../components/RegisterForm';
 
-const Login = () => {
+const SignUp = () => {
+
 
     return <div>
         <HeaderBlack />
-        <Register />
+        <RegisterForm />
+        {/* <Register /> */}
     </div>
 }
 
-export default Login;
+export default SignUp;
 

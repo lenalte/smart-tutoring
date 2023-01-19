@@ -52,11 +52,11 @@ const QuestionnaireFinder = () => {
             </Typography>
                 <Typography>
                     du musst nun ein paar Fragen beantworten, damit wir dich mit der richtigen Person matchen können!</Typography></>,
-            title: <>Wie alt ist dein Kind?</>,
+            title: <>Wie bist du/dein Kind?</>,
             content: <GenericSelect label="Alter" value={age} onChange={setAge} options={[...Array(99).keys()].map(idx => ({ label: `${idx}`, value: idx }))} />
         },
         {
-            title: <>Auf welche Schule geht Dein Kind aktuell/ <br /> möchtes es gehen?</>,
+            title: <>Auf welche Schule gehst du/Dein Kind aktuell und möchtes es gehen?</>,
             content: <SchoolFormFind value={school} onChange={setSchool} />
 
         },
@@ -65,7 +65,7 @@ const QuestionnaireFinder = () => {
             content: <GenericTextField label="Postleitzahl" onChange={plzChangeHandler} value={location} id={"outlined-number"} />
         },
         {
-            title: <>Wie viele Stunden in der Woche braucht dein   <br /> Kind einen Tutor?</>,
+            title: <>Wie viele Stunden in der Woche brauchst du/dein Kind einen Tutor?</>,
             content: <GenericSelect label="in Stunden" value={hours} onChange={setHours} options={[...Array(31).keys()].map(idx => ({ label: `${idx}`, value: idx }))} />
         },
         {
@@ -73,7 +73,7 @@ const QuestionnaireFinder = () => {
             content: <GenericMultiSelect label="Sprache auswählen" value={languages} onChange={setLanguages} options={LANGUAGES.map(label => ({ label: label, value: label }))} />
         },
         {
-            title: <>Wie gut sprichst du/dein Kind  <br /> diese Sprachen?</>,
+            title: <>Wie gut sprichst du/  <br /> dein Kind diese Sprachen?</>,
             content: <LanguageForm value={languageSkills} languages={languages} onChange={setLanguageSkills} />
         },
         {

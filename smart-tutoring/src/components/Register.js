@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
+// import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
 import FormGroup from '@mui/material/FormGroup';
@@ -11,15 +11,22 @@ import { useNavigate } from 'react-router-dom';
 import { useSearchParams } from 'react-router-dom';
 // import SignUp from '../pages/QuestionnaireB';
 
-export default function Login() {
+export default function Register({ onChange, value }) {
+
+    // const changeHandler = (event) => {
+    //     onChange(event.target.value);
+    // }
+
     const navigate = useNavigate();
     // eslint-disable-next-line
     const [searchParams, _] = useSearchParams();
     const targetPath = searchParams.get("targetPath");
 
+
+
     return (
         <Grid>
-            <div style={{
+            {/* <div style={{
                 position: 'absolute',
                 width: '335px',
                 height: '79px',
@@ -31,11 +38,11 @@ export default function Login() {
                 fontSize: '32px',
                 lineHeight: '37px',
                 color: '#000000'
-            }}>
-                <Typography fontFamily={"Judson"} sx={{ fontSize: 27 }} variant="body1" lineHeight={1.2} paddingBottom={4} paddingTop={6} paddingLeft={1} color="black">
-                    sign up für smart tutoring
-                </Typography>
-            </div>
+            }}> */}
+            <Typography fontFamily={"Judson"} sx={{ fontSize: 30 }} variant="body1" lineHeight={1.2} paddingBottom={4} paddingTop={6} paddingLeft={3} color="black">
+                sign up für smart <br /> tutoring
+            </Typography>
+            {/* </div> */}
 
             <Button style={{
                 position: 'absolute',
@@ -43,24 +50,25 @@ export default function Login() {
                 height: '50px',
                 left: '34px',
                 top: '234px',
+                color: 'black',
 
             }} variant="outlined">Google</Button>
-            <Box paddingTop={1.5} paddingRight={2.5}
+            {/* <Box paddingTop={1.5} paddingRight={2.5}
                 component="form"
                 sx={{
                     '& .MuiTextField-root': { m: 0.2, width: '38ch' },
                 }}
                 noValidate
                 autoComplete="off"
-            ></Box>
-            <Box
+            ></Box> */}
+            {/* <Box
                 component="form"
                 sx={{
                     '& .MuiTextField-root': { m: 1, width: '25ch' },
                 }}
                 noValidate
                 autoComplete="off"
-            ></Box>
+            ></Box> */}
             <div style={{
                 position: 'absolute',
                 width: '78px',
@@ -92,7 +100,7 @@ export default function Login() {
                         }}
                         id="outlined-vorname"
                         label="Vorname"
-                        defaultValue="Vorname"
+                    // defaultValue="Vorname"
                     />
                 </div>
                 <div style={{
@@ -108,7 +116,7 @@ export default function Login() {
                         }}
                         id="outlined-nachname"
                         label="Nachname"
-                        defaultValue="Nachname"
+                    // defaultValue="Nachname"
                     />
                 </div>
                 <div style={{
@@ -124,7 +132,7 @@ export default function Login() {
                         }}
                         id="outlined-email"
                         label="Email"
-                        defaultValue="Email"
+                    // defaultValue="Email"
                     />
                 </div>
                 <div style={{
@@ -142,6 +150,7 @@ export default function Login() {
                         label="Password"
                         type="password"
                         autoComplete="current-password"
+
                     />
                 </div>
                 <div style={{
