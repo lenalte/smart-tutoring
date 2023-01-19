@@ -4,7 +4,7 @@ import HeaderBlack from '../components/HeaderBlack';
 import ProgressView from '../components/genericComponents/ProgressView';
 import Typography from '@mui/material/Typography';
 import GenericSelect from '../components/genericComponents/GenericSelect';
-import SchoolForm from '../components/SchoolForm';
+import SchoolFormFind from '../components/SchoolFormFind';
 import GenericTextField from '../components/genericComponents/GenericTextField';
 import GenericMultiSelect from '../components/genericComponents/GenericMultiSelect';
 import LanguageForm from '../components/LanguageForm';
@@ -56,8 +56,8 @@ const QuestionnaireFinder = () => {
             content: <GenericSelect label="Alter" value={age} onChange={setAge} options={[...Array(99).keys()].map(idx => ({ label: `${idx}`, value: idx }))} />
         },
         {
-            title: <>Auf welche Schule geht Dein Kind <br />  aktuell/möchtes es gehen?</>,
-            content: <SchoolForm value={school} onChange={setSchool} />
+            title: <>Auf welche Schule geht Dein Kind aktuell/ <br /> möchtes es gehen?</>,
+            content: <SchoolFormFind value={school} onChange={setSchool} />
 
         },
         {
