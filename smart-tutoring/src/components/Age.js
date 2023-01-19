@@ -8,7 +8,7 @@ import Select from '@mui/material/Select';
 // const numbers = [...Array(5).keys()];
 // console.log(numbers);
 
-export default function Age() {
+export default function Age({ value, onChange }) {
 
     const [age, setAge] = React.useState('');
 

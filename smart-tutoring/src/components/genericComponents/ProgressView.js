@@ -48,7 +48,7 @@ const ProgressView = ({ steps, current, title, children, nextAction, nextLabel, 
                 // onClick={nextAction}
                 onClick={() => {
                     console.log('length', steps)
-                    if (current === steps - 1) {
+                    if (current === steps) {
                         switch (targetPath) {
                             case 'becomeTutor':
                                 navigate(`/profileSelf?targetPath=becomeTutor`);

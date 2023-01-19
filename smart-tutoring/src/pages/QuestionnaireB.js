@@ -1,77 +1,92 @@
 import { useState } from 'react';
-import { } from '@mui/icons-material';
 import HeaderBlack from '../components/HeaderBlack';
 import ProgressView from '../components/genericComponents/ProgressView';
-import Schools from '../components/Schools';
-import Location from '../components/Location';
-import Languages from '../components/Languages';
-import Bio from '../components/Bio';
-import Subjects from '../components/Subjects';
-import Age from '../components/Age';
-import Hours from '../components/Hours';
 import { Typography } from '@mui/material';
+import GenericSelect from '../components/genericComponents/GenericSelect';
+import SchoolForm from '../components/SchoolForm';
+import GenericTextField from '../components/genericComponents/GenericTextField';
+import GenericMultiSelect from '../components/genericComponents/GenericMultiSelect';
+import GenericChipMultiSelect from '../components/genericComponents/GenericChipMultiSelect';
+import LanguageForm from '../components/LanguageForm';
 
 
-// const [age, setAge] = useState(0);
-// const [schools, setSchools] = useState([]);
-// const [location, setLocation] = useState('');
-// const [languages, setLanguages] = useState([]);
-// const [bio, setBio] = useState('');
-// const [subjects, setSubjects] = useState([]);
 
+const LANGUAGES = ['Bulgarisch', 'Chinesisch', 'Dänisch', 'Deutsch', 'Englisch', 'Estnisch', 'Finnisch', 'Französisch', 'Griechisch',
+    'Indonesisch', 'Italienisch', 'Japanisch', 'Lettisch', 'Litauisch', 'Niederländisch', 'Polnisch', 'Portugiesisch', 'Rumänisch',
+    'Russisch', 'Schwedisch', 'Slowakisch', 'Slowenisch', 'Spanisch', 'Tschechisch', 'Türkisch', 'Ukrainisch', 'Ungarisch'];
 
-const steps = [
-    {
-        topContent: <><Typography fontFamily={"Judson"} variant="h4" component="h2" lineHeight={1.5} paddingBottom={1} paddingTop={3}>
-            Willkommen XY
-        </Typography>
-            <Typography>
-                du musst nun ein paar Fragen beantworten, damit wir dich mit der richtigen Person matchen können!</Typography></>,
-        title: <>Wie alt bist du?</>,
-        content: <Age prop
-        // onChange={(event) => setAge(event.target.value)} 
-        />
-    },
-    {
-        title: <>Auf welchen Schulen <br /> warst/bist du?</>,
-        content: <Schools
-        // onChange={(schools) => setSchools(schools)} 
-        />
-    },
-    {
-        title: <>Wo wohnst du aktuell?</>,
-        content: <Location
-        // onChange={(location) => setLocation(location)}
-        />
-    },
-    {
-        title: <>Wie viele Stunden in der Woche bist du bereit als Tutor tätig <br /> zu sein?</>,
-        content: <Hours
-        // onChange={(hours) => setHours(hours)}
-        />
-    },
-    {
-        title: <>Welche Sprachen <br /> sprichst du?</>,
-        content: <Languages
-        // onChange={(languages) => setLanguages(languages)}
-        />
-    },
-    {
-        title: <>Etwas über dich (optional):</>,
-        content: <Bio
-        // onChange={(bio) => setBio(bio)}
-        />
-    },
-    {
-        title: <>In welchen Fächern <br /> kannst du behilflich <br /> sein?</>,
-        content: <Subjects
-        // onChange={(subjects) => setSubjects(subjects)} 
-        />
-    }
-]
+const SUBJECTS = ["Mathe", "Deutsch", "Englisch", "HSU", "Erdkunde", "Biologie", "Geschichte", "Chemie", "Physik",
+    "Latein", "Französisch", "Religion", "Spanisch"]
 
 
 const QuestionnaireB = () => {
+
+    const [age, setAge] = useState('');
+    const [school, setSchool] = useState({ baseSchool: "", jobSchool: "", university: "" });
+    const [location, setLocation] = useState("");
+    const [hours, setHours] = useState('');
+    const [languages, setLanguages] = useState([]);
+    const [aboutyou, setAboutyou] = useState('');
+    const [subjects, setSubjects] = useState([]);
+    const [languageSkills, setLanguageSkills] = useState({});
+
+
+    console.log("languageSkills", languageSkills);
+
+    const plzChangeHandler = (plz) => {
+        if (plz === undefined || plz === null || plz === "") {
+            setLocation("");
+        }
+        const val = plz.match(/\d+/);
+        if (val !== null) {
+            setLocation(val.join(""));
+        }
+    }
+
+
+
+    const steps = [
+        {
+            topContent: <><Typography fontFamily={"Judson"} variant="h4" component="h2" lineHeight={1.5} paddingBottom={1} paddingTop={3}>
+                Willkommen XY
+            </Typography>
+                <Typography>
+                    du musst nun ein paar Fragen beantworten, damit wir dich mit der richtigen Person matchen können!</Typography></>,
+            title: <>Wie alt bist du?</>,
+            content: <GenericSelect label="Alter" value={age} onChange={setAge} options={[...Array(99).keys()].map(idx => ({ label: `${idx}`, value: idx }))}
+            />
+        },
+        {
+            title: <>Auf welchen Schulen <br /> warst/bist du?</>,
+            content: <SchoolForm value={school} onChange={setSchool} />
+        },
+        {
+            title: <>Wo wohnst du aktuell?</>,
+            content: <GenericTextField label="Postleitzahl" onChange={plzChangeHandler} value={location} id={"outlined-number"} />
+        },
+        {
+            title: <>Wie viele Stunden in der Woche bist du bereit als Tutor tätig <br /> zu sein?</>,
+            content: <GenericSelect label="in Stunden" value={hours} onChange={setHours} options={[...Array(31).keys()].map(idx => ({ label: `${idx}`, value: idx }))}
+            />
+        },
+        {
+            title: <>Welche Sprachen <br /> sprichst du?</>,
+            content: <GenericMultiSelect label="Sprache auswählen" value={languages} onChange={setLanguages} options={LANGUAGES.map(label => ({ label: label, value: label }))}
+            />
+        },
+        {
+            title: <>Wie gut sprichst du <br /> diese Sprachen?</>,
+            content: <LanguageForm value={languageSkills} languages={languages} onChange={setLanguageSkills} />
+        },
+        {
+            title: <>Etwas über dich (optional):</>,
+            content: <GenericTextField label="Etwas über dich" value={aboutyou} onChange={setAboutyou} />
+        },
+        {
+            title: <>In welchen Fächern <br /> kannst du behilflich <br /> sein?</>,
+            content: <GenericChipMultiSelect options={SUBJECTS} values={subjects} onChange={setSubjects} />
+        }
+    ]
 
 
     // let data = {
@@ -80,6 +95,8 @@ const QuestionnaireB = () => {
     // };
 
     const [current, setCurrent] = useState(0);
+
+    console.log("current", current);
 
     return <div className="App">
         <HeaderBlack />

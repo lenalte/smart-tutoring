@@ -35,12 +35,12 @@ export default function Languages() {
         getOptionLabel={(option) => option.title}
         renderOption={(props, option, { selected }) => (
           <li {...props}>
-            <Checkbox
+            {/* <Checkbox
               icon={icon}
               checkedIcon={checkedIcon}
               style={{ marginRight: 8 }}
               checked={selected}
-            />
+            /> */}
             {option.title}
           </li>
         )}

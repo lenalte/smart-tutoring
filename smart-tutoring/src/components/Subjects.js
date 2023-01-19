@@ -21,6 +21,7 @@ const subjects = [
 ]
 
 
+
 export default function Subjects() {
     const theme = createTheme({
         palette: {

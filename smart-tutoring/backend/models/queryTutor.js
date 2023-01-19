@@ -12,4 +12,4 @@ const querySchema = new mongoose.Schema({
     author: { type: mongoose.Schema.Types.ObjectId, ref: 'UserTutor' },
 })
 
-module.exports = mongoose.model("query", querySchema)
+module.exports = mongoose.model("queryTutor", querySchema)
