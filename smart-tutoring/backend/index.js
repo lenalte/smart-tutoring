@@ -11,6 +11,9 @@ const bcrypt = require('bcryptjs');
 const queryStudent = require('./models/queryStudent');
 const queryTutor = require('./models/queryTutor');
 
+// const cors = require('cors');
+// app.use(cors({ origin: 'http://localhost:4000' }));
+
 require('dotenv').config()
 app.use(bp.json())
 app.use(bp.urlencoded({ extended: true }))
@@ -18,9 +21,9 @@ app.use(express.json())
 
 
 // Connection URL
-const url = 'mongodb://127.0.0.1:27017';
+const url = process.env.MONGODB_CONNECTION;
 const client = new MongoClient(url);
-mongoose.connect('mongodb://127.0.0.1:27017/user');
+mongoose.connect(process.env.MONGODB_CONNECTION);
 
 
 // Database Name

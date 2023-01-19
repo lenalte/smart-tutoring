@@ -8,7 +8,7 @@ import GenericTextField from '../components/genericComponents/GenericTextField';
 import GenericMultiSelect from '../components/genericComponents/GenericMultiSelect';
 import GenericChipMultiSelect from '../components/genericComponents/GenericChipMultiSelect';
 import LanguageForm from '../components/LanguageForm';
-
+import userApi from '../services/userApi';
 
 
 const LANGUAGES = ['Bulgarisch', 'Chinesisch', 'Dänisch', 'Deutsch', 'Englisch', 'Estnisch', 'Finnisch', 'Französisch', 'Griechisch',
@@ -29,10 +29,18 @@ const QuestionnaireB = () => {
     const [languageSkills, setLanguageSkills] = useState({});
     const [aboutyou, setAboutyou] = useState('');
     const [subjects, setSubjects] = useState([]);
+    const [loading, setLaoding] = useState(true);
 
 
-
+    console.log("age", age);
+    console.log("school", school);
+    console.log("location", location);
+    console.log("hours", hours);
+    console.log("languages", languages);
     console.log("languageSkills", languageSkills);
+    console.log("aboutyou", aboutyou);
+    console.log("subjects", subjects);
+
 
     const plzChangeHandler = (plz) => {
         if (plz === undefined || plz === null || plz === "") {
@@ -91,20 +99,28 @@ const QuestionnaireB = () => {
 
 
 
-    fetch('../backend/server.js/queryT', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ age, school, location, hours, languages, languageSkills, aboutyou, subjects })
-    })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
+    // fetch('../backend/server.js/queryT', {
+    //     method: 'POST',
+    //     headers: {
+    //         'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify({ age, school, location, hours, languages, languageSkills, aboutyou, subjects })
+    // })
+    //     .then(response => response.json())
+    //     .then(data => {
+    //         console.log('Success:', data);
+    //     })
+    //     .catch((error) => {
+    //         console.error('Error:', error);
+    //     });
+
+
+    const send = () => {
+        setLaoding(true);
+        return userApi.addUser(age, school, location, hours, languages, languageSkills, aboutyou, subjects).then(() => {
+            setLaoding(false);
         })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
+    }
 
     // let data = {
     //     age: 0,
@@ -115,9 +131,15 @@ const QuestionnaireB = () => {
 
     console.log("current", current);
 
+
+
     return <div className="App">
         <HeaderBlack />
-        <ProgressView topContent={steps[current].topContent} steps={steps.length} current={current + 1} title={steps[current].title} nextLabel="next" nextAction={() => { setCurrent(current + 1); }}
+        <ProgressView topContent={steps[current].topContent} steps={steps.length} current={current + 1} title={steps[current].title} nextLabel="next" nextAction={() => {
+            send().then(() => {
+                setCurrent(current + 1);
+            })
+        }}
             onChange={(event) => { console.log(event); }}>
             {steps[current].content}
         </ProgressView>

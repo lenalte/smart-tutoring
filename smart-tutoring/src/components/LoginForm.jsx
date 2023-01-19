@@ -5,12 +5,17 @@ import { useNavigate } from 'react-router-dom';
 import { useSearchParams } from 'react-router-dom';
 import GenericPasswordInput from './genericComponents/GenericPasswordInput';
 import GenericTextField from './genericComponents/GenericTextField';
+import userApi from '../services/userApi';
 
 
 const LoginForm = () => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [loading, setLaoding] = useState(true);
+
+    console.log("email", email);
+    console.log("password", password);
 
     const navigate = useNavigate();
     // eslint-disable-next-line
@@ -18,21 +23,27 @@ const LoginForm = () => {
     const targetPath = searchParams.get("targetPath");
 
 
-
-    fetch('../backend/server.js/users/login', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ email, password })
-    })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
+    const send = () => {
+        setLaoding(true);
+        return userApi.addUser(email, password).then(() => {
+            setLaoding(false);
         })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
+    }
+
+    // fetch('../backend/server.js/users/login', {
+    //     method: 'POST',
+    //     headers: {
+    //         'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify({ email, password })
+    // })
+    //     .then(response => response.json())
+    //     .then(data => {
+    //         console.log('Success:', data);
+    //     })
+    //     .catch((error) => {
+    //         console.error('Error:', error);
+    //     });
 
 
 
@@ -51,20 +62,23 @@ const LoginForm = () => {
             <Button variant="contained"
                 sx={{ borderRadius: 50 }}
                 className='button'
+                loading={loading}
                 onClick={() => {
-                    switch (targetPath) {
-                        case 'findTutor':
-                            navigate('/questionnaireFind');
-                            console.log('Hello')
-                            break;
-                        case 'becomeTutor':
-                            navigate('/questionnaireBecome');
-                            console.log('Hello2')
-                            break;
-                        default:
-                            console.log('Hello3')
-                            navigate('/');
-                    }
+                    send().then(() => {
+                        switch (targetPath) {
+                            case 'findTutor':
+                                navigate('/questionnaireFind');
+                                console.log('Hello')
+                                break;
+                            case 'becomeTutor':
+                                navigate('/questionnaireBecome');
+                                console.log('Hello2')
+                                break;
+                            default:
+                                console.log('Hello3')
+                                navigate('/');
+                        }
+                    })
                 }}
                 style={{
                     position: 'absolute',

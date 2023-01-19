@@ -9,6 +9,7 @@ import GenericTextField from '../components/genericComponents/GenericTextField';
 import GenericMultiSelect from '../components/genericComponents/GenericMultiSelect';
 import LanguageForm from '../components/LanguageForm';
 import GenericChiptMultiSelect from '../components/genericComponents/GenericChipMultiSelect';
+import userApi from '../services/userApi';
 
 
 const LANGUAGES = ['Bulgarisch', 'Chinesisch', 'Dänisch', 'Deutsch', 'Englisch', 'Estnisch', 'Finnisch', 'Französisch', 'Griechisch',
@@ -30,6 +31,7 @@ const QuestionnaireFinder = () => {
     const [languageSkills, setLanguageSkills] = useState({});
     const [aboutyou, setAboutyou] = useState('');
     const [subjects, setSubjects] = useState([]);
+    const [loading, setLaoding] = useState(true);
 
 
 
@@ -88,26 +90,38 @@ const QuestionnaireFinder = () => {
     ]
 
 
-    fetch('../backend/server.js/queryS', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ age, school, location, hours, languages, languageSkills, aboutyou, subjects })
-    })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
+    // fetch('../backend/server.js/queryS', {
+    //     method: 'POST',
+    //     headers: {
+    //         'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify({ age, school, location, hours, languages, languageSkills, aboutyou, subjects })
+    // })
+    //     .then(response => response.json())
+    //     .then(data => {
+    //         console.log('Success:', data);
+    //     })
+    //     .catch((error) => {
+    //         console.error('Error:', error);
+    //     });
+
+
+    const send = () => {
+        setLaoding(true);
+        return userApi.addUser(age, school, location, hours, languages, languageSkills, aboutyou, subjects).then(() => {
+            setLaoding(false);
         })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
+    }
 
 
     const [current, setCurrent] = useState(0);
     return <div className="App">
         <HeaderBlack />
-        <ProgressView topContent={steps[current].topContent} steps={steps.length} current={current + 1} title={steps[current].title} nextLabel="next" nextAction={() => setCurrent(current + 1)}>
+        <ProgressView topContent={steps[current].topContent} steps={steps.length} current={current + 1} title={steps[current].title} nextLabel="next" nextAction={() => {
+            send().then(() => {
+                setCurrent(current + 1)
+            })
+        }}>
             {steps[current].content}
         </ProgressView>
     </div>

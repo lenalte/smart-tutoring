@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import GenericTextField from './genericComponents/GenericTextField';
 import { useSearchParams } from 'react-router-dom';
 import GenericPasswordInput from './genericComponents/GenericPasswordInput';
+import { useState } from 'react';
+import userApi from '../services/userApi';
 
 const RegisterForm = () => {
 
@@ -11,6 +13,19 @@ const RegisterForm = () => {
     const [lastname, setLastname] = React.useState('');
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
+    const [loading, setLaoding] = useState(true);
+
+    console.log("prename", prename);
+    console.log("lastname", lastname);
+    console.log("email", email);
+    console.log("password", password);
+
+    const send = () => {
+        setLaoding(true);
+        return userApi.addUser(prename, lastname, email, password).then(() => {
+            setLaoding(false);
+        })
+    }
 
     const navigate = useNavigate();
     // eslint-disable-next-line
@@ -18,20 +33,20 @@ const RegisterForm = () => {
     const targetPath = searchParams.get("targetPath");
 
 
-    fetch('../backend/server.js/users', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ prename, lastname, email, password })
-    })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
+    // fetch('../backend/server.js/users', {
+    //     method: 'POST',
+    //     headers: {
+    //         'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify({ prename, lastname, email, password })
+    // })
+    //     .then(response => response.json())
+    //     .then(data => {
+    //         console.log('Success:', data);
+    //     })
+    //     .catch((error) => {
+    //         console.error('Error:', error);
+    //     });
 
 
     return (
@@ -72,25 +87,6 @@ const RegisterForm = () => {
                 {/* <GenericTextField label="Passwort" value={password} onChange={setPassword} type="password" /> */}
                 <GenericPasswordInput label="Passwort" value={password} onChange={setPassword} />
 
-                {/* <div style={{
-                    position: 'absolute',
-                    width: '315px',
-                    height: '50px',
-                    left: '34px',
-                    top: '609px',
-                }}>
-                    <TextField
-                        sx={{
-                            minWidth: '350',
-                        }}
-                        id="outlined-password-input"
-                        label="Password"
-                        type="password"
-                        autoComplete="current-password"
-
-                    />
-                </div> */}
-
             </Stack>
 
             <div style={{
@@ -98,12 +94,12 @@ const RegisterForm = () => {
                 width: '315px',
                 height: '50px',
                 left: '34px',
-                top: '675px',
+                top: '635px',
             }}>
                 <FormGroup
                 //{...label} defaultChecked color="default"
                 >
-                    <FormControlLabel control={<Checkbox defaultChecked />} label="Nutzungsbedinungen zustimmen" />
+                    <FormControlLabel control={<Checkbox />} label="Nutzungsbedinungen zustimmen" />
                 </FormGroup>
             </div>
 
@@ -111,20 +107,24 @@ const RegisterForm = () => {
             <Button variant="contained"
                 sx={{ borderRadius: 50 }}
                 className='button'
+                // loading={loading}
                 onClick={() => {
-                    switch (targetPath) {
-                        case 'findTutor':
-                            navigate(`/questionnaireFind?targetPath=findTutor`);
-                            console.log('Hello')
-                            break;
-                        case 'becomeTutor':
-                            navigate(`/questionnaireBecome?targetPath=becomeTutor`);
-                            console.log('Hello2')
-                            break;
-                        default:
-                            console.log('Hello3')
-                            navigate('/');
-                    }
+                    send().then(() => {
+                        switch (targetPath) {
+                            case 'findTutor':
+                                navigate(`/questionnaireFind?targetPath=findTutor`);
+                                console.log('Hello')
+                                break;
+                            case 'becomeTutor':
+                                navigate(`/questionnaireBecome?targetPath=becomeTutor`);
+                                console.log('Hello2')
+                                break;
+                            default:
+                                console.log('Hello3')
+                                navigate('/');
+                        }
+                    })
+
                 }}
                 // href='/questionnaireBecome'
                 style={{
