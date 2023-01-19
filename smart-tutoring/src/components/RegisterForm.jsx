@@ -17,6 +17,23 @@ const RegisterForm = () => {
     const [searchParams, _] = useSearchParams();
     const targetPath = searchParams.get("targetPath");
 
+
+    fetch('../backend/server.js/users', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ prename, lastname, email, password })
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+
+
     return (
         <Stack >
             <Typography fontFamily={"Judson"} sx={{ fontSize: 30 }} variant="body1" lineHeight={1.2} paddingBottom={4} paddingTop={6} paddingLeft={3} color="black">

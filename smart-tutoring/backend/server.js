@@ -136,7 +136,7 @@ app.get('/users', auth, async (req, res) => {
         console.log("user", user);
         return res.send(user)
     } catch (e) {
-        if (e.name == "CastError") {
+        if (e.name === "CastError") {
             return res.status(404).send({ status: "not Found" });
         }
         console.log(e);

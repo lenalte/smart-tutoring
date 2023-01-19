@@ -26,9 +26,10 @@ const QuestionnaireB = () => {
     const [location, setLocation] = useState("");
     const [hours, setHours] = useState('');
     const [languages, setLanguages] = useState([]);
+    const [languageSkills, setLanguageSkills] = useState({});
     const [aboutyou, setAboutyou] = useState('');
     const [subjects, setSubjects] = useState([]);
-    const [languageSkills, setLanguageSkills] = useState({});
+
 
 
     console.log("languageSkills", languageSkills);
@@ -88,6 +89,22 @@ const QuestionnaireB = () => {
         }
     ]
 
+
+
+    fetch('../backend/server.js/queryT', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ age, school, location, hours, languages, languageSkills, aboutyou, subjects })
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
 
     // let data = {
     //     age: 0,
