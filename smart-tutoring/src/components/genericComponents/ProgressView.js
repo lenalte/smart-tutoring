@@ -13,6 +13,18 @@ const ProgressView = ({ steps, current, title, children, nextAction, nextLabel, 
     const [searchParams, _] = useSearchParams();
     const targetPath = searchParams.get("targetPath");
 
+    // const handleNextClick = () => {
+    //     const data = [age, schools, location, languages, bio, subjects];
+    //     // send data to the backend
+
+    //     fetch('/api/data', {
+    //         method: 'POST',
+    //         body: JSON.stringify(data),
+    //         headers: {
+    //           'Content-Type': 'application/json'
+    //         }
+    //       });
+    //   }
 
 
     return <><Container>
@@ -53,6 +65,8 @@ const ProgressView = ({ steps, current, title, children, nextAction, nextLabel, 
                         // navigate('/profileBecome');
                     } else {
                         nextAction();
+                        // setCurrent(current + 1);
+                        // handleNextClick();
                     }
                 }}
                 style={{

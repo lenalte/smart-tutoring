@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-const jwt = require('jsonwebtoken')
+// const jwt = require('jsonwebtoken')
 require('dotenv').config()
 
 const userSchema = new mongoose.Schema({
@@ -19,7 +19,8 @@ const userSchema = new mongoose.Schema({
     token: {
         type: String,
         required: true
-    }
+    },
+    query: [{ type: mongoose.Schema.Types.ObjectId, ref: 'queryTutor' }]
 })
 
 
