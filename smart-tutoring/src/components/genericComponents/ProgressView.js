@@ -1,12 +1,12 @@
 import { Typography } from "@mui/material"
 import { Box, Container } from "@mui/system"
 import ProgressLine from "../ProgressLine"
-import Button from "@mui/material/Button"
+import LoadingButton from '@mui/lab/LoadingButton';
 import { useNavigate } from 'react-router-dom';
 import { useSearchParams } from 'react-router-dom';
 
 
-const ProgressView = ({ steps, current, title, children, nextAction, nextLabel, topContent }) => {
+const ProgressView = ({ steps, current, title, children, nextAction, nextLabel, topContent, loading }) => {
 
     const navigate = useNavigate();
     // eslint-disable-next-line
@@ -26,6 +26,8 @@ const ProgressView = ({ steps, current, title, children, nextAction, nextLabel, 
     //       });
     //   }
 
+    console.log("loading", loading, typeof (loading))
+
 
     return <><Container>
         {topContent}
@@ -42,12 +44,14 @@ const ProgressView = ({ steps, current, title, children, nextAction, nextLabel, 
                 }}>
                 {children}
             </Box>
-            <Button variant="contained"
+            <LoadingButton variant="contained"
                 sx={{ borderRadius: 50 }}
                 className='button'
+                loading={loading}
                 // onClick={nextAction}
                 onClick={() => {
                     console.log('length', steps)
+                    nextAction();
                     if (current === steps) {
                         switch (targetPath) {
                             case 'becomeTutor':
@@ -63,10 +67,6 @@ const ProgressView = ({ steps, current, title, children, nextAction, nextLabel, 
                                 navigate('/');
                         }
                         // navigate('/profileBecome');
-                    } else {
-                        nextAction();
-                        // setCurrent(current + 1);
-                        // handleNextClick();
                     }
                 }}
                 style={{
@@ -82,7 +82,7 @@ const ProgressView = ({ steps, current, title, children, nextAction, nextLabel, 
                     padding: '8px 65px 8px 65px',
                     backgroundColor: 'black',
                 }}>
-                {nextLabel}</Button>
+                {nextLabel}</LoadingButton>
         </Container></>
 }
 

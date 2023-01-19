@@ -25,7 +25,7 @@ const LoginForm = () => {
 
     const send = () => {
         setLaoding(true);
-        return userApi.addUser(email, password).then(() => {
+        return userApi.loginUser(email, password).then(() => {
             setLaoding(false);
         })
     }

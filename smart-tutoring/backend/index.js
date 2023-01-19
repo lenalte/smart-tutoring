@@ -11,6 +11,10 @@ const bcrypt = require('bcryptjs');
 const queryStudent = require('./models/queryStudent');
 const queryTutor = require('./models/queryTutor');
 
+const cors = require('cors');
+app.use(cors({
+    origin: '*'
+}));
 // const cors = require('cors');
 // app.use(cors({ origin: 'http://localhost:4000' }));
 
@@ -112,7 +116,7 @@ app.post('/users/login', async (req, res) => {
     if (!user) {
         return res.status(404).send({ status: "Wrong email" })
     }
-    if (await bcrypt.compare(req.body.password, user.password)) {
+    if (await bcrypt.compare(password, user.password)) {
         const token = generateToken(req.body.email);
         return res.status(201).json({ token: token });
     }

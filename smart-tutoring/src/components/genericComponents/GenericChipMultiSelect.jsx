@@ -24,16 +24,17 @@ const GenericChiptMultiSelect = ({ options, label, values, onChange }) => {
 
     return (
         <Grid container spacing={0}>
-            {options.map(option => <Grid xs="auto">
-                <ThemeProvider theme={theme}>
+            <ThemeProvider theme={theme}>
+                {options.map(option => <Grid key={option} xs="auto">
+
                     <Chip label={option}
                         style={{ margin: 3 }}
-                        key={option}
                         color={values.includes(option) ? "secondary" : "primary"}
                         onClick={() => toggleSelection(option)}
                     />
-                </ThemeProvider>
-            </Grid>)}
+
+                </Grid>)}
+            </ThemeProvider>
         </Grid >
 
     )

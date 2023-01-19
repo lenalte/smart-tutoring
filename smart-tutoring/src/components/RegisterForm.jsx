@@ -6,6 +6,7 @@ import { useSearchParams } from 'react-router-dom';
 import GenericPasswordInput from './genericComponents/GenericPasswordInput';
 import { useState } from 'react';
 import userApi from '../services/userApi';
+import { setToken } from '../services/apiCalls';
 
 const RegisterForm = () => {
 
@@ -22,8 +23,10 @@ const RegisterForm = () => {
 
     const send = () => {
         setLaoding(true);
-        return userApi.addUser(prename, lastname, email, password).then(() => {
+        return userApi.addUser(prename, lastname, email, password).then((res) => {
+            setToken(res.token)
             setLaoding(false);
+            return res;
         })
     }
 
@@ -107,7 +110,7 @@ const RegisterForm = () => {
             <Button variant="contained"
                 sx={{ borderRadius: 50 }}
                 className='button'
-                // loading={loading}
+                loading={loading}
                 onClick={() => {
                     send().then(() => {
                         switch (targetPath) {

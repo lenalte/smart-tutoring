@@ -3,7 +3,7 @@ const mongoose = require("mongoose")
 require('dotenv').config()
 
 const userSchema = new mongoose.Schema({
-    firstname: String,
+    prename: String,
     lastname: String,
     email: {
         type: String,

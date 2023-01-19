@@ -6,8 +6,8 @@ const querySchema = new mongoose.Schema({
     location: Number,
     hours: Number,
     languages: [String],
-    skill: [Number],
-    bio: String,
+    languageSkill: [{ language: String, level: Number }],
+    aboutyou: String,
     subjects: [String],
     author: { type: mongoose.Schema.Types.ObjectId, ref: 'UserTutor' },
 })

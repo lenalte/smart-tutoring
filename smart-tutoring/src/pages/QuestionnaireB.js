@@ -117,7 +117,7 @@ const QuestionnaireB = () => {
 
     const send = () => {
         setLaoding(true);
-        return userApi.addUser(age, school, location, hours, languages, languageSkills, aboutyou, subjects).then(() => {
+        return userApi.addUser(age, Object.values(school), location, hours, languages, languageSkills.map(val => ({ language: val.keys[0], level: val.values[0] })), aboutyou, subjects).then(() => {
             setLaoding(false);
         })
     }
@@ -135,7 +135,7 @@ const QuestionnaireB = () => {
 
     return <div className="App">
         <HeaderBlack />
-        <ProgressView topContent={steps[current].topContent} steps={steps.length} current={current + 1} title={steps[current].title} nextLabel="next" nextAction={() => {
+        <ProgressView topContent={steps[current].topContent} steps={steps.length} current={current + 1} title={steps[current].title} loading={loading} nextLabel="next" nextAction={() => {
             send().then(() => {
                 setCurrent(current + 1);
             })
