@@ -13,6 +13,7 @@ import Button from '@mui/material/Button';
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import IconButton from '@mui/material/IconButton';
+import { useSearchParams } from 'react-router-dom';
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
     height: 10,
@@ -64,7 +65,12 @@ const card3 = (
 );
 
 
-export default function Profile() {
+export default function Profile(location) {
+
+    // const { name } = queryString.parse(location.search);
+
+    const [searchParams, _] = useSearchParams();
+    const name = searchParams.get("name");
 
 
     return (
@@ -81,10 +87,10 @@ export default function Profile() {
                 <Grid item xs={8}>
                     <Box>
                         <Typography fontFamily={"Judson"} sx={{ fontSize: 20 }} variant="body1" lineHeight={1.2} color="black">
-                            Vorname Nachname, Alter
+                            {name}
                         </Typography>
 
-                        <Rating name="read-only" value={3} readOnly size="small" style={{ paddingTop: 8, color: '#ff453c' }} />
+                        <Rating name="read-only" value={5} readOnly disabled size="small" style={{ paddingTop: 8, color: '#ff453c' }} />
 
                     </Box>
                 </Grid>

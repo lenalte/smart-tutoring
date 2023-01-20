@@ -20,19 +20,21 @@ const subjects = [
     { id: 13, label: "Spanisch" }
 ]
 
+export const theme = createTheme({
+    palette: {
+        primary: {
+            main: '#e5e5e5',
+        },
+        secondary: {
+            main: '#000000',
+        },
+    },
+});
+
 
 
 export default function Subjects() {
-    const theme = createTheme({
-        palette: {
-            primary: {
-                main: '#e5e5e5',
-            },
-            secondary: {
-                main: '#000000',
-            },
-        },
-    });
+
 
     const [selectedId, setSelectedId] = useState([]);
 

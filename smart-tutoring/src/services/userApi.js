@@ -1,4 +1,4 @@
-import { postRequestPromise, setToken } from "./apiCalls"
+import { getRequestPromise, postRequestPromise, setToken } from "./apiCalls"
 
 
 function addUser(prename, lastname, email, password) {
@@ -29,17 +29,16 @@ function addDataTutor(age, school, location, hours, languages, languageSkills, a
     return postRequestPromise("/queryT", body)
 }
 
-// function getAllUsers() {
-//     const body = {
-
-//     }
-// }
+function getAllUsers() {
+    return getRequestPromise("/users")
+}
 
 const userApi = {
     addUser,
     loginUser,
     addDataStudent,
-    addDataTutor
+    addDataTutor,
+    getAllUsers,
 }
 
 export default userApi;

@@ -14,7 +14,6 @@ const MatchesF = () => {
             </Typography>
             <Stack spacing={1.5}>
                 <Matches />
-                <Matches />
             </Stack>
         </Stack>
     </div>

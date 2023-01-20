@@ -75,7 +75,7 @@ export default function CustomDay() {
     <Stack>
       <Box paddingBottom={3} paddingLeft={2} paddingTop={1}>
         <IconButton href='/profileBecome'>
-          <ArrowBackIosIcon fontSize='medium'/>
+          <ArrowBackIosIcon fontSize='medium' />
         </IconButton>
       </Box>
       <LocalizationProvider dateAdapter={AdapterDayjs}>

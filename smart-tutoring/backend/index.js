@@ -67,7 +67,7 @@ async function auth(req, res, next) {
 // Register user
 
 function generateToken(email) {
-    return jwt.sign({ email }, process.env.JWT_SECRET, { expiresIn: "5m" });
+    return jwt.sign({ email }, process.env.JWT_SECRET, { expiresIn: "10m" });
 }
 
 
@@ -139,9 +139,9 @@ app.post('/users/logout', auth, async (req, res) => {
 // GET mongoose Endpoint mit auth
 app.get('/users', auth, async (req, res) => {
     try {
-        const user = await User.findOne({ email: req.user.email })
-        console.log("user", user);
-        return res.send(user)
+        const users = await User.find()
+        console.log("users", users);
+        return res.send(users)
     } catch (e) {
         if (e.name === "CastError") {
             return res.status(404).send({ status: "not Found" });
