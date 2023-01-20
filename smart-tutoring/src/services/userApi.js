@@ -29,6 +29,12 @@ function addDataTutor(age, school, location, hours, languages, languageSkills, a
     return postRequestPromise("/queryT", body)
 }
 
+// function getAllUsers() {
+//     const body = {
+
+//     }
+// }
+
 const userApi = {
     addUser,
     loginUser,

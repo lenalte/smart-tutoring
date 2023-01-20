@@ -12,20 +12,6 @@ const ProgressView = ({ steps, current, title, children, nextAction, nextLabel, 
     // eslint-disable-next-line
     const [searchParams, _] = useSearchParams();
     const targetPath = searchParams.get("targetPath");
-
-    // const handleNextClick = () => {
-    //     const data = [age, schools, location, languages, bio, subjects];
-    //     // send data to the backend
-
-    //     fetch('/api/data', {
-    //         method: 'POST',
-    //         body: JSON.stringify(data),
-    //         headers: {
-    //           'Content-Type': 'application/json'
-    //         }
-    //       });
-    //   }
-
     console.log("loading", loading, typeof (loading))
 
 
@@ -48,10 +34,9 @@ const ProgressView = ({ steps, current, title, children, nextAction, nextLabel, 
                 sx={{ borderRadius: 50 }}
                 className='button'
                 loading={loading}
-                // onClick={nextAction}
                 onClick={() => {
                     console.log('length', steps)
-                    nextAction();
+                    nextAction()
                     if (current === steps) {
                         switch (targetPath) {
                             case 'becomeTutor':
@@ -66,7 +51,6 @@ const ProgressView = ({ steps, current, title, children, nextAction, nextLabel, 
                                 console.log('Hello3')
                                 navigate('/');
                         }
-                        // navigate('/profileBecome');
                     }
                 }}
                 style={{

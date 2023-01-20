@@ -51,7 +51,7 @@ const QuestionnaireFinder = () => {
     const steps = [
         {
             topContent: <><Typography fontFamily={"Judson"} variant="h4" component="h2" lineHeight={1.5} paddingBottom={1} paddingTop={3}>
-                Willkommen XY
+                Willkommen
             </Typography>
                 <Typography>
                     du musst nun ein paar Fragen beantworten, damit wir dich mit der richtigen Person matchen können!</Typography></>,
@@ -90,30 +90,14 @@ const QuestionnaireFinder = () => {
     ]
 
 
-    // fetch('../backend/server.js/queryS', {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify({ age, school, location, hours, languages, languageSkills, aboutyou, subjects })
-    // })
-    //     .then(response => response.json())
-    //     .then(data => {
-    //         console.log('Success:', data);
-    //     })
-    //     .catch((error) => {
-    //         console.error('Error:', error);
-    //     });
-
-
     const send = () => {
         const langSkillExport = Object.keys(languageSkills).map(val => ({ language: val, level: languageSkills[val] }))
         const languagesExport = languages.map(lang => lang.label);
-        const shoolExport = Object.values(school).filter(school => school !== "");
+        const schoolExport = Object.values(school).filter(school => school !== "");
         console.log("languages", languagesExport);
         console.log("SEND", langSkillExport)
         setLaoding(true);
-        return userApi.addDataStudent(age, shoolExport, location, hours, languagesExport, langSkillExport, aboutyou, subjects).then(() => {
+        return userApi.addDataStudent(age, schoolExport, location, hours, languagesExport, langSkillExport, aboutyou, subjects).then(() => {
             setLaoding(false);
         })
     }
@@ -130,8 +114,8 @@ const QuestionnaireFinder = () => {
             } else {
                 setCurrent(current + 1)
             }
-        }
-        }>
+        }}
+            onChange={(event) => { console.log(event); }}>
             {steps[current].content}
         </ProgressView>
     </div>

@@ -30,22 +30,6 @@ const LoginForm = () => {
         })
     }
 
-    // fetch('../backend/server.js/users/login', {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify({ email, password })
-    // })
-    //     .then(response => response.json())
-    //     .then(data => {
-    //         console.log('Success:', data);
-    //     })
-    //     .catch((error) => {
-    //         console.error('Error:', error);
-    //     });
-
-
 
     return (
         <Stack>
@@ -67,11 +51,11 @@ const LoginForm = () => {
                     send().then(() => {
                         switch (targetPath) {
                             case 'findTutor':
-                                navigate('/questionnaireFind');
+                                navigate('/matchesfinder');
                                 console.log('Hello')
                                 break;
                             case 'becomeTutor':
-                                navigate('/questionnaireBecome');
+                                navigate('/profileSelf');
                                 console.log('Hello2')
                                 break;
                             default:

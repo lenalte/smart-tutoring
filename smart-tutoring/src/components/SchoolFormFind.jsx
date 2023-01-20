@@ -9,7 +9,7 @@ const SchoolForm = ({ value, onChange }) => {
 
     return <Stack spacing={2.5} paddingTop={1}>
         <GenericSelect value={value.baseSchool} onChange={val => onChange({ ...value, baseSchool: val })} label={"aktuelle Schule"} options={CURRENT_SCHOOL_OPTIONS} />
-        <GenericSelect value={value.jobSchool} onChange={val => onChange({ ...value, jobSchool: val })} label={"berufsausbildende Schule"} options={WISH_SCHOOL_OPTIONS} />
+        <GenericSelect value={value.jobSchool} onChange={val => onChange({ ...value, jobSchool: val })} label={"Wunschschule"} options={WISH_SCHOOL_OPTIONS} />
     </Stack>
 }
 

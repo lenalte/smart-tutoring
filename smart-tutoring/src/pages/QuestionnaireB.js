@@ -57,7 +57,7 @@ const QuestionnaireB = () => {
     const steps = [
         {
             topContent: <><Typography fontFamily={"Judson"} variant="h4" component="h2" lineHeight={1.5} paddingBottom={1} paddingTop={3}>
-                Willkommen XY
+                Willkommen
             </Typography>
                 <Typography>
                     du musst nun ein paar Fragen beantworten, damit wir dich mit der richtigen Person matchen können!</Typography></>,
@@ -98,34 +98,17 @@ const QuestionnaireB = () => {
     ]
 
 
-
-    // fetch('../backend/server.js/queryT', {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify({ age, school, location, hours, languages, languageSkills, aboutyou, subjects })
-    // })
-    //     .then(response => response.json())
-    //     .then(data => {
-    //         console.log('Success:', data);
-    //     })
-    //     .catch((error) => {
-    //         console.error('Error:', error);
-    //     });
-
-
     const send = () => {
+        const langSkillExport = Object.keys(languageSkills).map(val => ({ language: val, level: languageSkills[val] }))
+        const languagesExport = languages.map(lang => lang.label);
+        const schoolExport = Object.values(school).filter(school => school !== "");
+
         setLaoding(true);
-        return userApi.addUser(age, Object.values(school), location, hours, languages, languageSkills.map(val => ({ language: val.keys[0], level: val.values[0] })), aboutyou, subjects).then(() => {
+        return userApi.addUser(age, schoolExport, location, hours, languagesExport, langSkillExport, aboutyou, subjects).then(() => {
             setLaoding(false);
         })
     }
 
-    // let data = {
-    //     age: 0,
-    //     schools: []
-    // };
 
     const [current, setCurrent] = useState(0);
 
@@ -136,9 +119,11 @@ const QuestionnaireB = () => {
     return <div className="App">
         <HeaderBlack />
         <ProgressView topContent={steps[current].topContent} steps={steps.length} current={current + 1} title={steps[current].title} loading={loading} nextLabel="next" nextAction={() => {
-            send().then(() => {
+            if (current === steps.length - 1) {
+                send()
+            } else {
                 setCurrent(current + 1);
-            })
+            }
         }}
             onChange={(event) => { console.log(event); }}>
             {steps[current].content}
