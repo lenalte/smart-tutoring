@@ -10,8 +10,8 @@ const SetDate = () => {
         <Stack>
             <HeaderBlack />
             <Date />
-            <SetTime/>
-            <Button/>
+            <SetTime />
+            <Button />
         </Stack>
     </div>
 }

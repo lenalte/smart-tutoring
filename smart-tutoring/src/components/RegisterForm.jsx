@@ -36,20 +36,6 @@ const RegisterForm = () => {
     const targetPath = searchParams.get("targetPath");
 
 
-    // fetch('../backend/server.js/users', {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify({ prename, lastname, email, password })
-    // })
-    //     .then(response => response.json())
-    //     .then(data => {
-    //         console.log('Success:', data);
-    //     })
-    //     .catch((error) => {
-    //         console.error('Error:', error);
-    //     });
 
 
     return (
@@ -100,7 +86,6 @@ const RegisterForm = () => {
                 top: '635px',
             }}>
                 <FormGroup
-                //{...label} defaultChecked color="default"
                 >
                     <FormControlLabel control={<Checkbox />} label="Nutzungsbedinungen zustimmen" />
                 </FormGroup>
@@ -129,7 +114,6 @@ const RegisterForm = () => {
                     })
 
                 }}
-                // href='/questionnaireBecome'
                 style={{
                     position: 'absolute',
                     height: '46px',

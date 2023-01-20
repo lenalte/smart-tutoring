@@ -2,7 +2,6 @@ import * as React from 'react';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import { useNavigate } from 'react-router-dom';
-// import Box from '@mui/material/Box';
 
 
 
@@ -18,10 +17,7 @@ export default function RedButtons() {
                 onClick={() => { navigate(`/login?targetPath=findTutor`) }}
                 style={{
                     position: 'absolute',
-                    // width: '9em',
                     justifyContent: 'center',
-                    // left: '7em',
-                    // bottom: '4em',
                     color: 'white',
                     fontFamily: 'Judson',
                     fontSize: '17px',
@@ -37,10 +33,7 @@ export default function RedButtons() {
                 onClick={() => { navigate(`/login?targetPath=becomeTutor`) }}
                 style={{
                     position: 'absolute',
-                    // width: '9em',
                     justifyContent: 'center',
-                    // left: '7em',
-                    // bottom: '4em',
                     color: 'white',
                     fontFamily: 'Judson',
                     fontSize: '17px',

@@ -1,5 +1,4 @@
 import * as React from 'react';
-// import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
 import FormGroup from '@mui/material/FormGroup';
@@ -9,16 +8,11 @@ import Button from "@mui/material/Button";
 import Typography from '@mui/material/Typography';
 import { useNavigate } from 'react-router-dom';
 import { useSearchParams } from 'react-router-dom';
-// import SignUp from '../pages/QuestionnaireB';
 
 export default function Register({ onChange, value }) {
 
-    // const changeHandler = (event) => {
-    //     onChange(event.target.value);
-    // }
 
     const navigate = useNavigate();
-    // eslint-disable-next-line
     const [searchParams, _] = useSearchParams();
     const targetPath = searchParams.get("targetPath");
 
@@ -26,23 +20,10 @@ export default function Register({ onChange, value }) {
 
     return (
         <Grid>
-            {/* <div style={{
-                position: 'absolute',
-                width: '335px',
-                height: '79px',
-                left: '29px',
-                top: '100px',
-                fontFamily: 'Judson',
-                fontStyle: 'normal',
-                fontWeight: 400,
-                fontSize: '32px',
-                lineHeight: '37px',
-                color: '#000000'
-            }}> */}
+
             <Typography fontFamily={"Judson"} sx={{ fontSize: 30 }} variant="body1" lineHeight={1.2} paddingBottom={4} paddingTop={6} paddingLeft={3} color="black">
                 sign up für smart <br /> tutoring
             </Typography>
-            {/* </div> */}
 
             <Button style={{
                 position: 'absolute',
@@ -53,22 +34,6 @@ export default function Register({ onChange, value }) {
                 color: 'black',
 
             }} variant="outlined">Google</Button>
-            {/* <Box paddingTop={1.5} paddingRight={2.5}
-                component="form"
-                sx={{
-                    '& .MuiTextField-root': { m: 0.2, width: '38ch' },
-                }}
-                noValidate
-                autoComplete="off"
-            ></Box> */}
-            {/* <Box
-                component="form"
-                sx={{
-                    '& .MuiTextField-root': { m: 1, width: '25ch' },
-                }}
-                noValidate
-                autoComplete="off"
-            ></Box> */}
             <div style={{
                 position: 'absolute',
                 width: '78px',
@@ -100,7 +65,6 @@ export default function Register({ onChange, value }) {
                         }}
                         id="outlined-vorname"
                         label="Vorname"
-                    // defaultValue="Vorname"
                     />
                 </div>
                 <div style={{
@@ -116,7 +80,6 @@ export default function Register({ onChange, value }) {
                         }}
                         id="outlined-nachname"
                         label="Nachname"
-                    // defaultValue="Nachname"
                     />
                 </div>
                 <div style={{
@@ -161,7 +124,6 @@ export default function Register({ onChange, value }) {
                     top: '675px',
                 }}>
                     <FormGroup
-                    //{...label} defaultChecked color="default"
                     >
                         <FormControlLabel control={<Checkbox defaultChecked />} label="Nutzungsbedinungen zustimmen" />
                     </FormGroup>
@@ -184,7 +146,6 @@ export default function Register({ onChange, value }) {
                                 navigate('/');
                         }
                     }}
-                    // href='/questionnaireBecome'
                     style={{
                         position: 'absolute',
                         height: '46px',
@@ -234,8 +195,6 @@ export default function Register({ onChange, value }) {
                                 navigate('/');
                         }
                     }}
-                    // onClick={() => { navigate(`/signin?targetPath=targetPath`) }}
-                    // href='/signin'
                     style={{
                         position: 'absolute',
                         height: '28px',

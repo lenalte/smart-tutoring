@@ -104,7 +104,7 @@ const QuestionnaireB = () => {
         const schoolExport = Object.values(school).filter(school => school !== "");
 
         setLaoding(true);
-        return userApi.addUser(age, schoolExport, location, hours, languagesExport, langSkillExport, aboutyou, subjects).then(() => {
+        return userApi.addDataTutor(age, schoolExport, location, hours, languagesExport, langSkillExport, aboutyou, subjects).then(() => {
             setLaoding(false);
         })
     }
