@@ -29,7 +29,7 @@ const QuestionnaireB = () => {
     const [languageSkills, setLanguageSkills] = useState({});
     const [aboutyou, setAboutyou] = useState('');
     const [subjects, setSubjects] = useState([]);
-    const [loading, setLaoding] = useState(true);
+    const [loading, setLaoding] = useState(false);
 
 
     console.log("age", age);

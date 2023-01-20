@@ -24,7 +24,7 @@ const SUBJECTS = ["Mathe", "Deutsch", "Englisch", "HSU", "Erdkunde", "Biologie",
 const QuestionnaireFinder = () => {
 
     const [age, setAge] = useState('');
-    const [school, setSchool] = useState({ baseSchool: "", jobSchool: "", university: "" });
+    const [school, setSchool] = useState({ baseSchool: "", jobSchool: "" });
     const [location, setLocation] = useState("");
     const [hours, setHours] = useState('');
     const [languages, setLanguages] = useState([]);

@@ -62,7 +62,7 @@ const card3 = (
 );
 
 
-export default function Profile() {
+export default function ProfileSelf() {
 
 
     return (
@@ -77,7 +77,7 @@ export default function Profile() {
                             Vorname Nachname, Alter
                         </Typography>
 
-                        <Rating name="read-only" value={3} readOnly size="small" style={{ paddingTop: 8, color: '#ff453c' }} />
+                        <Rating name="read-only" value={5} readOnly disabled size="small" style={{ paddingTop: 8, color: '#ff453c' }} />
 
                     </Box>
                 </Grid>
